@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c DIO.c leds.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c DIO.c leds.c buttons.c keypad.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/DIO.o.d ${OBJECTDIR}/leds.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/keypad.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/DIO.o.d ${OBJECTDIR}/leds.o.d ${OBJECTDIR}/buttons.o.d ${OBJECTDIR}/keypad.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/keypad.o
 
 # Source Files
-SOURCEFILES=main.c DIO.c leds.c
+SOURCEFILES=main.c DIO.c leds.c buttons.c keypad.c
 
 
 
@@ -112,6 +112,18 @@ ${OBJECTDIR}/leds.o: leds.c  .generated_files/flags/default/fb340e860acf3594e857
 	@${RM} ${OBJECTDIR}/leds.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/leds.o.d" -MT "${OBJECTDIR}/leds.o.d" -MT ${OBJECTDIR}/leds.o -o ${OBJECTDIR}/leds.o leds.c 
 	
+${OBJECTDIR}/buttons.o: buttons.c  .generated_files/flags/default/92b88625771320abe8d20a7fd221abcde7b12c7f .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/buttons.o.d 
+	@${RM} ${OBJECTDIR}/buttons.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/buttons.o.d" -MT "${OBJECTDIR}/buttons.o.d" -MT ${OBJECTDIR}/buttons.o -o ${OBJECTDIR}/buttons.o buttons.c 
+	
+${OBJECTDIR}/keypad.o: keypad.c  .generated_files/flags/default/79e5f4b383a48bdfee48e42d8d3677dbbb338c0 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/keypad.o.d 
+	@${RM} ${OBJECTDIR}/keypad.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/keypad.o.d" -MT "${OBJECTDIR}/keypad.o.d" -MT ${OBJECTDIR}/keypad.o -o ${OBJECTDIR}/keypad.o keypad.c 
+	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/7f10ee1221fcf4ce53d804ce20fbcfc53affd159 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
 	@${MKDIR} "${OBJECTDIR}" 
@@ -130,6 +142,18 @@ ${OBJECTDIR}/leds.o: leds.c  .generated_files/flags/default/3e9af9e4d14431b2d773
 	@${RM} ${OBJECTDIR}/leds.o.d 
 	@${RM} ${OBJECTDIR}/leds.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/leds.o.d" -MT "${OBJECTDIR}/leds.o.d" -MT ${OBJECTDIR}/leds.o -o ${OBJECTDIR}/leds.o leds.c 
+	
+${OBJECTDIR}/buttons.o: buttons.c  .generated_files/flags/default/3bf0ede7cc65de33df6f7c074b624b2d5bca921c .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/buttons.o.d 
+	@${RM} ${OBJECTDIR}/buttons.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/buttons.o.d" -MT "${OBJECTDIR}/buttons.o.d" -MT ${OBJECTDIR}/buttons.o -o ${OBJECTDIR}/buttons.o buttons.c 
+	
+${OBJECTDIR}/keypad.o: keypad.c  .generated_files/flags/default/77841c8b1706c6958bccadcdfb2832a7b5736683 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/keypad.o.d 
+	@${RM} ${OBJECTDIR}/keypad.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/keypad.o.d" -MT "${OBJECTDIR}/keypad.o.d" -MT ${OBJECTDIR}/keypad.o -o ${OBJECTDIR}/keypad.o keypad.c 
 	
 endif
 
