@@ -16,18 +16,48 @@
 #include "leds.h"
 #include "buttons.h"
 #include "keypad.h"
+#include "kit_keypad.h"
 
 int main() {
 
     init_LEDS();
-    init_keypad();
-    setPORTD_DIR(OUT);
-    
+//    init_kit_keypad();
+    setPINA(PA1, IN);
     while (1) {
-
+//
+//        switch(kit_keypad_getNum()){
+//            case 1:
+//            case 4:
+//            case 7:
+//                led_on(LED1);
+//                _delay_ms(5);
+//                break;
+//            case 2:
+//            case 5:
+//            case 8:
+//                led_on(LED2);
+//                _delay_ms(5);
+//                break;
+//            case 3:
+//            case 6:
+//            case 9:
+//                led_on(LED3);
+//                _delay_ms(5);
+//                break;
+//            case 0:
+//                led_off_all();
+//                _delay_ms(5);
+//        }
         
-        PORTD = keypad_read();
-        _delay_ms(50);
+        
+        if(checkPINA(PA1)){
+            led_on_all();
+        }
+        else{
+            led_off_all();
+        }
+        _delay_ms(15);
+       
 
     }
 

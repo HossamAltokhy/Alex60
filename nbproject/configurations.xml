@@ -8,6 +8,7 @@
       <itemPath>leds.h</itemPath>
       <itemPath>buttons.h</itemPath>
       <itemPath>keypad.h</itemPath>
+      <itemPath>kit_keypad.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -21,6 +22,7 @@
       <itemPath>leds.c</itemPath>
       <itemPath>buttons.c</itemPath>
       <itemPath>keypad.c</itemPath>
+      <itemPath>kit_keypad.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

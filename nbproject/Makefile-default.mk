@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c DIO.c leds.c buttons.c keypad.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c DIO.c leds.c buttons.c keypad.c kit_keypad.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/keypad.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/DIO.o.d ${OBJECTDIR}/leds.o.d ${OBJECTDIR}/buttons.o.d ${OBJECTDIR}/keypad.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/keypad.o ${OBJECTDIR}/kit_keypad.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/DIO.o.d ${OBJECTDIR}/leds.o.d ${OBJECTDIR}/buttons.o.d ${OBJECTDIR}/keypad.o.d ${OBJECTDIR}/kit_keypad.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/keypad.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/keypad.o ${OBJECTDIR}/kit_keypad.o
 
 # Source Files
-SOURCEFILES=main.c DIO.c leds.c buttons.c keypad.c
+SOURCEFILES=main.c DIO.c leds.c buttons.c keypad.c kit_keypad.c
 
 
 
@@ -124,6 +124,12 @@ ${OBJECTDIR}/keypad.o: keypad.c  .generated_files/flags/default/79e5f4b383a48bdf
 	@${RM} ${OBJECTDIR}/keypad.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/keypad.o.d" -MT "${OBJECTDIR}/keypad.o.d" -MT ${OBJECTDIR}/keypad.o -o ${OBJECTDIR}/keypad.o keypad.c 
 	
+${OBJECTDIR}/kit_keypad.o: kit_keypad.c  .generated_files/flags/default/8b3eb8cc242c76d9b14cde939c3ccce0321b8be5 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/kit_keypad.o.d 
+	@${RM} ${OBJECTDIR}/kit_keypad.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/kit_keypad.o.d" -MT "${OBJECTDIR}/kit_keypad.o.d" -MT ${OBJECTDIR}/kit_keypad.o -o ${OBJECTDIR}/kit_keypad.o kit_keypad.c 
+	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/7f10ee1221fcf4ce53d804ce20fbcfc53affd159 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
 	@${MKDIR} "${OBJECTDIR}" 
@@ -154,6 +160,12 @@ ${OBJECTDIR}/keypad.o: keypad.c  .generated_files/flags/default/77841c8b1706c695
 	@${RM} ${OBJECTDIR}/keypad.o.d 
 	@${RM} ${OBJECTDIR}/keypad.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/keypad.o.d" -MT "${OBJECTDIR}/keypad.o.d" -MT ${OBJECTDIR}/keypad.o -o ${OBJECTDIR}/keypad.o keypad.c 
+	
+${OBJECTDIR}/kit_keypad.o: kit_keypad.c  .generated_files/flags/default/16c704f18f496aac81781b4afcdccd838e603955 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/kit_keypad.o.d 
+	@${RM} ${OBJECTDIR}/kit_keypad.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/kit_keypad.o.d" -MT "${OBJECTDIR}/kit_keypad.o.d" -MT ${OBJECTDIR}/kit_keypad.o -o ${OBJECTDIR}/kit_keypad.o kit_keypad.c 
 	
 endif
 
