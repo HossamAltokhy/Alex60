@@ -10,6 +10,7 @@
       <itemPath>keypad.h</itemPath>
       <itemPath>kit_keypad.h</itemPath>
       <itemPath>_7seg.h</itemPath>
+      <itemPath>mlcd8.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -25,6 +26,7 @@
       <itemPath>keypad.c</itemPath>
       <itemPath>kit_keypad.c</itemPath>
       <itemPath>_7seg.c</itemPath>
+      <itemPath>mlcd8.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

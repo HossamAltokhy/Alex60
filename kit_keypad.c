@@ -47,9 +47,9 @@ char kit_keypad_getNum() {
                 _delay_ms(50);
                 check = checkPORTD()& (0x8C);
                 if (check == 0x88) {
-                    return 3;
+                    return 7;
                 } else {
-                    return 2;
+                    return 4;
                 }
             } else {
                 return 1;
@@ -64,12 +64,12 @@ char kit_keypad_getNum() {
                 _delay_ms(50);
                 check = checkPORTD()& (0x8C);
                 if (check == 0x84) {
-                    return 6;
+                    return 8;
                 } else {
                     return 5;
                 }
             } else {
-                return 4;
+                return 2;
             }
             break;
 
@@ -84,10 +84,10 @@ char kit_keypad_getNum() {
                 if (check == 0x0C) {
                     return 9;
                 } else {
-                    return 8;
+                    return 6;
                 }
             } else {
-                return 7;
+                return 3;
             }
             break;
     }
