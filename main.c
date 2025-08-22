@@ -28,37 +28,12 @@ int main() {
 
     init_keypad();
 
-    //    LCD_num(num);
-
-    int i =0;
-    char user_password[4];
-    char password[]= "1234";
-    char correct_str[] = "Correct Password";
-    char wrong_str[] = "Wrong Password";
+    
     while (1) {
 
-        user_password[i++]= keypad_read();
-        LCD_data('*');
         
-        if(i== 4){
-            if(strncmp(password,user_password,4) == 0){
-                LCD_cmd(0x01);
-                LCD_str(correct_str);
-                // code if correct
-                
-            }
-            else{
-                LCD_cmd(0x01);
-                LCD_str(wrong_str);
-                _delay_ms(500);
-                LCD_cmd(0x01);
-                
-                i =0;
-            }
-        }
-
+        LCD_data(keypad_read());
         _delay_ms(250);
-
 
 
     }

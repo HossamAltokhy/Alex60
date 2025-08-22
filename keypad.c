@@ -89,12 +89,12 @@ char keypad_read() {
                     if (checkPORTC() & 0xF0) {
                         setPINC(1, LOW);
                         if (checkPORTC() & 0xF0) {
-                            return '0';
+                            return '*';
                         } else {
                             return '0';
                         }
                     } else {
-                        return '0';
+                        return '#';
                     }
                     break;
 
