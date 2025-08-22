@@ -45,13 +45,13 @@ void LCD_cmd(char cmd){
  // str [] = "Hello";  // '\0'
 void LCD_str(char * str){
     
-    for(int i =0; str[i] != '\0';i++){
+    for(int i = 0; str[i] != '\0';i++){
         LCD_data(str[i]);
     }
     
 }
 
-void LCD_num ( int num){
+void LCD_num (long int num){
     // num = 0123456789
     
     char num_str[11];
@@ -63,7 +63,7 @@ void LCD_num ( int num){
     
 //    itoa(integer, array , radix);
 //    itoa(num, arr , 10);
-    itoa(num, num_str, 10);
+    ltoa(num, num_str, 10);
     
     
     LCD_str(num_str);

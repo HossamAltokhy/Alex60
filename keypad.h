@@ -8,9 +8,9 @@
 #ifndef KEYPAD_H
 #define	KEYPAD_H
 
-#define keypad_dir  DDRA
-#define keypad_port PORTA
-#define keypad_pin  PINA
+#define keypad_dir  DDRC
+#define keypad_port PORTC
+#define keypad_pin  PINC
 
 void init_keypad();
 
