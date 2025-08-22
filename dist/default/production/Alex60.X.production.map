@@ -169,8 +169,34 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/mlcd8.o
  .data          0x0000000000000000        0x0 build/default/production/mlcd8.o
  .bss           0x0000000000000000        0x0 build/default/production/mlcd8.o
+ .text.LCD_enable
+                0x0000000000000000       0x12 build/default/production/mlcd8.o
+ .text.LCD_data
+                0x0000000000000000        0xa build/default/production/mlcd8.o
+ .text.LCD_cmd  0x0000000000000000        0xa build/default/production/mlcd8.o
+ .text.init_LCD8
+                0x0000000000000000       0x36 build/default/production/mlcd8.o
  .text.LCD_str  0x0000000000000000       0x1e build/default/production/mlcd8.o
  .text.LCD_num  0x0000000000000000       0x3a build/default/production/mlcd8.o
+ .debug_info    0x0000000000000000      0x59d build/default/production/mlcd8.o
+ .debug_abbrev  0x0000000000000000      0x1bb build/default/production/mlcd8.o
+ .debug_loc     0x0000000000000000      0x1d2 build/default/production/mlcd8.o
+ .debug_aranges
+                0x0000000000000000       0x48 build/default/production/mlcd8.o
+ .debug_ranges  0x0000000000000000       0x38 build/default/production/mlcd8.o
+ .debug_line    0x0000000000000000      0x1b8 build/default/production/mlcd8.o
+ .debug_str     0x0000000000000000        0xe build/default/production/mlcd8.o
+ .comment       0x0000000000000000       0x30 build/default/production/mlcd8.o
+ .debug_frame   0x0000000000000000       0x90 build/default/production/mlcd8.o
+ .text          0x0000000000000000        0x0 build/default/production/mlcd4.o
+ .data          0x0000000000000000        0x0 build/default/production/mlcd4.o
+ .bss           0x0000000000000000        0x0 build/default/production/mlcd4.o
+ .text.LCD4_str
+                0x0000000000000000       0x1e build/default/production/mlcd4.o
+ .text.LCD4_num
+                0x0000000000000000       0x42 build/default/production/mlcd4.o
+ .text.LCD4_cmdS
+                0x0000000000000000       0x12 build/default/production/mlcd4.o
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
@@ -254,6 +280,7 @@ LOAD build/default/production/keypad.o
 LOAD build/default/production/kit_keypad.o
 LOAD build/default/production/_7seg.o
 LOAD build/default/production/mlcd8.o
+LOAD build/default/production/mlcd4.o
 START GROUP
 LOAD c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a
 END GROUP
@@ -511,7 +538,7 @@ END GROUP
                                          0x30 (size before relaxing)
  .comment       0x000000000000002f       0x30 build/default/production/DIO.o
  .comment       0x000000000000002f       0x30 build/default/production/keypad.o
- .comment       0x000000000000002f       0x30 build/default/production/mlcd8.o
+ .comment       0x000000000000002f       0x30 build/default/production/mlcd4.o
 
 .stack.descriptors.hdr
                 0x0000000000000000        0xe
@@ -533,7 +560,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x1a8
+.debug_aranges  0x0000000000000000      0x1b0
  *(.debug_aranges)
  .debug_aranges
                 0x0000000000000000       0x20 build/default/production/main.o
@@ -542,55 +569,55 @@ END GROUP
  .debug_aranges
                 0x0000000000000138       0x28 build/default/production/keypad.o
  .debug_aranges
-                0x0000000000000160       0x48 build/default/production/mlcd8.o
+                0x0000000000000160       0x50 build/default/production/mlcd4.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x1b71
+.debug_info     0x0000000000000000     0x1ba3
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_info    0x00000000000004e6      0x341 build/default/production/main.o
- .debug_info    0x0000000000000827      0x7e7 build/default/production/DIO.o
- .debug_info    0x000000000000100e      0x5c7 build/default/production/keypad.o
- .debug_info    0x00000000000015d5      0x59c build/default/production/mlcd8.o
+ .debug_info    0x00000000000004e6      0x346 build/default/production/main.o
+ .debug_info    0x000000000000082c      0x7e7 build/default/production/DIO.o
+ .debug_info    0x0000000000001013      0x5c7 build/default/production/keypad.o
+ .debug_info    0x00000000000015da      0x5c9 build/default/production/mlcd4.o
 
-.debug_abbrev   0x0000000000000000      0x9a2
+.debug_abbrev   0x0000000000000000      0x9ac
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_abbrev  0x00000000000004a3       0xe8 build/default/production/main.o
- .debug_abbrev  0x000000000000058b      0x132 build/default/production/DIO.o
- .debug_abbrev  0x00000000000006bd      0x12a build/default/production/keypad.o
- .debug_abbrev  0x00000000000007e7      0x1bb build/default/production/mlcd8.o
+ .debug_abbrev  0x00000000000004a3       0xf2 build/default/production/main.o
+ .debug_abbrev  0x0000000000000595      0x132 build/default/production/DIO.o
+ .debug_abbrev  0x00000000000006c7      0x12a build/default/production/keypad.o
+ .debug_abbrev  0x00000000000007f1      0x1bb build/default/production/mlcd4.o
 
-.debug_line     0x0000000000000000      0xa39
+.debug_line     0x0000000000000000      0xa85
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x119 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_line    0x0000000000000119       0xf4 build/default/production/main.o
- .debug_line    0x000000000000020d      0x47b build/default/production/DIO.o
- .debug_line    0x0000000000000688      0x1f9 build/default/production/keypad.o
- .debug_line    0x0000000000000881      0x1b8 build/default/production/mlcd8.o
+ .debug_line    0x0000000000000119       0xfa build/default/production/main.o
+ .debug_line    0x0000000000000213      0x47b build/default/production/DIO.o
+ .debug_line    0x000000000000068e      0x1f9 build/default/production/keypad.o
+ .debug_line    0x0000000000000887      0x1fe build/default/production/mlcd4.o
 
-.debug_frame    0x0000000000000000      0x2fc
+.debug_frame    0x0000000000000000      0x31c
  *(.debug_frame)
  .debug_frame   0x0000000000000000       0x24 build/default/production/main.o
  .debug_frame   0x0000000000000024      0x214 build/default/production/DIO.o
  .debug_frame   0x0000000000000238       0x34 build/default/production/keypad.o
- .debug_frame   0x000000000000026c       0x90 build/default/production/mlcd8.o
+ .debug_frame   0x000000000000026c       0xb0 build/default/production/mlcd4.o
 
-.debug_str      0x0000000000000000      0x20d
+.debug_str      0x0000000000000000      0x20f
  *(.debug_str)
  .debug_str     0x0000000000000000      0x196 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_str     0x0000000000000196       0x2a build/default/production/main.o
- .debug_str     0x00000000000001c0       0x28 build/default/production/DIO.o
- .debug_str     0x00000000000001e8       0x17 build/default/production/keypad.o
- .debug_str     0x00000000000001ff        0xe build/default/production/mlcd8.o
+ .debug_str     0x0000000000000196       0x2c build/default/production/main.o
+ .debug_str     0x00000000000001c2       0x28 build/default/production/DIO.o
+ .debug_str     0x00000000000001ea       0x17 build/default/production/keypad.o
+ .debug_str     0x0000000000000201        0xe build/default/production/mlcd4.o
 
-.debug_loc      0x0000000000000000      0x7ee
+.debug_loc      0x0000000000000000      0x7ec
  *(.debug_loc)
  .debug_loc     0x0000000000000000      0x558 build/default/production/DIO.o
  .debug_loc     0x0000000000000558       0xc4 build/default/production/keypad.o
- .debug_loc     0x000000000000061c      0x1d2 build/default/production/mlcd8.o
+ .debug_loc     0x000000000000061c      0x1d0 build/default/production/mlcd4.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -610,12 +637,12 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000      0x168
+.debug_ranges   0x0000000000000000      0x170
  *(.debug_ranges)
  .debug_ranges  0x0000000000000000       0x10 build/default/production/main.o
  .debug_ranges  0x0000000000000010      0x108 build/default/production/DIO.o
  .debug_ranges  0x0000000000000118       0x18 build/default/production/keypad.o
- .debug_ranges  0x0000000000000130       0x38 build/default/production/mlcd8.o
+ .debug_ranges  0x0000000000000130       0x40 build/default/production/mlcd4.o
 
 .debug_macro
  *(.debug_macro)
@@ -650,56 +677,59 @@ LOAD data_init
  .text.setPINC  0x0000000000000248       0x3e build/default/production/DIO.o
                 0x0000000000000248                setPINC
 
-.text.init_LCD  0x0000000000000286       0x36
- .text.init_LCD
-                0x0000000000000286       0x36 build/default/production/mlcd8.o
-                0x0000000000000286                init_LCD
+.text.LCD4_data
+                0x0000000000000286       0x30
+ .text.LCD4_data
+                0x0000000000000286       0x30 build/default/production/mlcd4.o
+                0x0000000000000286                LCD4_data
 
-.text.main      0x00000000000002bc       0x24
- .text.main     0x00000000000002bc       0x24 build/default/production/main.o
-                0x00000000000002bc                main
+.text.LCD4_cmd  0x00000000000002b6       0x30
+ .text.LCD4_cmd
+                0x00000000000002b6       0x30 build/default/production/mlcd4.o
+                0x00000000000002b6                LCD4_cmd
 
-.text.LCD_enable
-                0x00000000000002e0       0x12
- .text.LCD_enable
-                0x00000000000002e0       0x12 build/default/production/mlcd8.o
-                0x00000000000002e0                LCD_enable
+.text.init_LCD4
+                0x00000000000002e6       0x2c
+ .text.init_LCD4
+                0x00000000000002e6       0x2c build/default/production/mlcd4.o
+                0x00000000000002e6                init_LCD4
 
-.text.LCD_data  0x00000000000002f2        0xa
- .text.LCD_data
-                0x00000000000002f2        0xa build/default/production/mlcd8.o
-                0x00000000000002f2                LCD_data
+.text.main      0x0000000000000312       0x2a
+ .text.main     0x0000000000000312       0x2a build/default/production/main.o
+                0x0000000000000312                main
 
-.text.LCD_cmd   0x00000000000002fc        0xa
- .text.LCD_cmd  0x00000000000002fc        0xa build/default/production/mlcd8.o
-                0x00000000000002fc                LCD_cmd
+.text.LCD4_enable
+                0x000000000000033c       0x12
+ .text.LCD4_enable
+                0x000000000000033c       0x12 build/default/production/mlcd4.o
+                0x000000000000033c                LCD4_enable
 
-.text           0x0000000000000306        0x4
- .text          0x0000000000000306        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
-                0x0000000000000306                __vector_1
-                0x0000000000000306                __vector_12
-                0x0000000000000306                __bad_interrupt
-                0x0000000000000306                __vector_6
-                0x0000000000000306                __vector_3
-                0x0000000000000306                __vector_11
-                0x0000000000000306                __vector_13
-                0x0000000000000306                __vector_17
-                0x0000000000000306                __vector_19
-                0x0000000000000306                __vector_7
-                0x0000000000000306                __vector_5
-                0x0000000000000306                __vector_4
-                0x0000000000000306                __vector_9
-                0x0000000000000306                __vector_2
-                0x0000000000000306                __vector_15
-                0x0000000000000306                __vector_8
-                0x0000000000000306                __vector_14
-                0x0000000000000306                __vector_10
-                0x0000000000000306                __vector_16
-                0x0000000000000306                __vector_18
-                0x0000000000000306                __vector_20
+.text           0x000000000000034e        0x4
+ .text          0x000000000000034e        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
+                0x000000000000034e                __vector_1
+                0x000000000000034e                __vector_12
+                0x000000000000034e                __bad_interrupt
+                0x000000000000034e                __vector_6
+                0x000000000000034e                __vector_3
+                0x000000000000034e                __vector_11
+                0x000000000000034e                __vector_13
+                0x000000000000034e                __vector_17
+                0x000000000000034e                __vector_19
+                0x000000000000034e                __vector_7
+                0x000000000000034e                __vector_5
+                0x000000000000034e                __vector_4
+                0x000000000000034e                __vector_9
+                0x000000000000034e                __vector_2
+                0x000000000000034e                __vector_15
+                0x000000000000034e                __vector_8
+                0x000000000000034e                __vector_14
+                0x000000000000034e                __vector_10
+                0x000000000000034e                __vector_16
+                0x000000000000034e                __vector_18
+                0x000000000000034e                __vector_20
 
 .text.checkPORTC
-                0x000000000000030a        0x4
+                0x0000000000000352        0x4
  .text.checkPORTC
-                0x000000000000030a        0x4 build/default/production/DIO.o
-                0x000000000000030a                checkPORTC
+                0x0000000000000352        0x4 build/default/production/DIO.o
+                0x0000000000000352                checkPORTC

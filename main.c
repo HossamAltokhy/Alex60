@@ -19,20 +19,21 @@
 #include "keypad.h"
 #include "kit_keypad.h"
 #include "_7seg.h"
-#include "mlcd8.h"
+#include "mlcd4.h"
 #include <string.h>
 
 int main() {
-    long int num = 1234567890;
-    init_LCD();
+    
+    init_LCD4();
 
     init_keypad();
 
     
+    LCD4_data('A');
     while (1) {
 
         
-        LCD_data(keypad_read());
+        LCD4_data(keypad_read());
         _delay_ms(250);
 
 

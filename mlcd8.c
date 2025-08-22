@@ -8,16 +8,16 @@
 #include "stdlib.h"
 
 
-void init_LCD(){
+void init_LCD8(){
     // set LCD_DIR to be output port
     LCD_DATA_DIR = 0xFF;
     LCD_COM_PIN_DIR |= (1<<LCD_RS)|(1<<LCD_EN);
     //......
     
-   LCD_cmd(0x60); 
+   LCD_cmd(0x38); 
    LCD_cmd(0x0F); 
-   LCD_cmd(0x0C); 
-   LCD_cmd(0x01);
+   LCD_cmd(0x06); 
+   LCD_cmd(0x02);
    
    _delay_ms(50);
 
