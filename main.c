@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <avr/io.h>
+#include "stdio.h"
+#include "stdlib.h"
 
 #define F_CPU 16000000UL
 #include <util/delay.h>
@@ -20,18 +22,19 @@
 #include "_7seg.h"
 #include "mlcd8.h"
 
-int main() {
 
+char str[] = "Hello";
+
+int main() {
+    int num = 39990;
     init_LCD();
 
-  LCD_data('A');
-  LCD_data('h');
-  LCD_data('m');
-  LCD_data('e');
-  LCD_data('d');
+
+    LCD_num(num);
     while (1) {
 
-        
+
+
 
     }
 

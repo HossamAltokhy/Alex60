@@ -24,7 +24,7 @@ void LCD_cmd(char cmd);
 
 // HW
 void LCD_str(char * str);
-void LCD_num (int num);
+void LCD_num ( int num);
 
 #endif	/* MLCD8_H */
 

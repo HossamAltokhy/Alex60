@@ -5,6 +5,7 @@
 #include "DIO.h"
 #define F_CPU 16000000UL
 #include <util/delay.h>
+#include "stdlib.h"
 
 
 void init_LCD(){
@@ -40,4 +41,32 @@ void LCD_cmd(char cmd){
     LCD_COM_PIN &= ~(1<<LCD_RS);
     LCD_DATA = cmd;
     LCD_enable();
+}
+ // str [] = "Hello";  // '\0'
+void LCD_str(char * str){
+    
+    for(int i =0; str[i] != '\0';i++){
+        LCD_data(str[i]);
+    }
+    
+}
+
+void LCD_num ( int num){
+    // num = 0123456789
+    
+    char num_str[11];
+//    
+//    for(int i = 9; i >=0; i--){
+//        num_str[i] = '0' + num%10;
+//        num = num/10.0;
+//    }
+    
+//    itoa(integer, array , radix);
+//    itoa(num, arr , 10);
+    itoa(num, num_str, 10);
+    
+    
+    LCD_str(num_str);
+    
+    
 }
