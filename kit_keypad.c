@@ -23,82 +23,85 @@ void init_kit_keypad() {
     setPINA(PA1, LOW);
     setPINA(PA2, LOW);
     setPINA(PA3, LOW);
-    
+
     _delay_ms(50);
 
 }
 
 char kit_keypad_getNum() {
 
-    setPINA(PA1, LOW);
-    setPINA(PA2, LOW);
-    setPINA(PA3, LOW);
 
-    _delay_ms(50);// 0b10001100 == 0x8C
-    char check = checkPORTD()& (0x8C);
+    while (1) {
 
-    switch (check) {
-        case 0x88:
-            setPINA(PA1, HIGH);
-            _delay_ms(50);
-            check = checkPORTD()& (0x8C);
-            if (check == 0x88) {
-                setPINA(PA2, HIGH);
+        setPINA(PA1, LOW);
+        setPINA(PA2, LOW);
+        setPINA(PA3, LOW);
+
+        _delay_ms(50); // 0b10001100 == 0x8C
+        char check = checkPORTD()& (0x8C);
+
+        switch (check) {
+            case 0x88:
+                setPINA(PA1, HIGH);
                 _delay_ms(50);
                 check = checkPORTD()& (0x8C);
                 if (check == 0x88) {
-                    return 7;
+                    setPINA(PA2, HIGH);
+                    _delay_ms(50);
+                    check = checkPORTD()& (0x8C);
+                    if (check == 0x88) {
+                        return 7;
+                    } else {
+                        return 4;
+                    }
                 } else {
-                    return 4;
+                    return 1;
                 }
-            } else {
-                return 1;
-            }
-            break;
-        case 0x84:
-            setPINA(PA1, HIGH);
-            _delay_ms(50);
-            check = checkPORTD()& (0x8C);
-            if (check == 0x84) {
-                setPINA(PA2, HIGH);
+                break;
+            case 0x84:
+                setPINA(PA1, HIGH);
                 _delay_ms(50);
                 check = checkPORTD()& (0x8C);
                 if (check == 0x84) {
-                    return 8;
+                    setPINA(PA2, HIGH);
+                    _delay_ms(50);
+                    check = checkPORTD()& (0x8C);
+                    if (check == 0x84) {
+                        return 8;
+                    } else {
+                        return 5;
+                    }
                 } else {
-                    return 5;
+                    return 2;
                 }
-            } else {
-                return 2;
-            }
-            break;
+                break;
 
-        case 0x0C:
-            setPINA(PA1, HIGH);
-            _delay_ms(50);
-            check = checkPORTD()& (0x8C);
-            if (check == 0x0C) {
-                setPINA(PA2, HIGH);
+            case 0x0C:
+                setPINA(PA1, HIGH);
                 _delay_ms(50);
                 check = checkPORTD()& (0x8C);
                 if (check == 0x0C) {
-                    return 9;
+                    setPINA(PA2, HIGH);
+                    _delay_ms(50);
+                    check = checkPORTD()& (0x8C);
+                    if (check == 0x0C) {
+                        return 9;
+                    } else {
+                        return 6;
+                    }
                 } else {
-                    return 6;
+                    return 3;
                 }
-            } else {
-                return 3;
-            }
-            break;
+                break;
+        }
+
+
+        setPINA(PA1, LOW);
+        setPINA(PA2, LOW);
+        setPINA(PA3, LOW);
     }
 
-    
-    setPINA(PA1, LOW);
-    setPINA(PA2, LOW);
-    setPINA(PA3, LOW);
- 
-    _delay_ms(50);
-    return 0;
+
 
 }
 

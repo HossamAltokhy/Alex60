@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <avr/io.h>
+#include <avr/interrupt.h>
 
 
 #define F_CPU 16000000UL
@@ -22,19 +23,62 @@
 #include "mlcd4.h"
 #include <string.h>
 
+
+#define  INT_MODE_LOW        0
+#define  INT_MODE_ANY        1
+#define  INT_MODE_FALLING    2   // 00000010
+#define  INT_MODE_RISING     3
+
+char str [] = "Hello World";
+
+ISR(INT0_vect) {
+    led_tog_all();
+}
+
+void init_INT(char INT, char mode) {
+
+    switch (INT) {
+        case INT0:
+            MCUCR &= ~((1 << ISC01) | (1 << ISC00));
+            MCUCR |= mode;
+
+            break;
+        case INT1:
+            MCUCR &= ~((1 << ISC01) | (1 << ISC00));
+            MCUCR |= mode << 2;
+
+            break;
+        case INT2:
+            if (mode == INT_MODE_RISING) {
+                MCUCSR |= (1 << ISC2);
+            } else {
+                MCUCSR &= ~(1 << ISC2);
+            }
+
+            break;
+    }
+
+
+    GICR |= (1 << INT);
+
+}
+
 int main() {
-    
-    init_LCD4();
 
-    init_keypad();
 
+    init_LEDS();
     
-    LCD4_data('A');
+    
+    init_INT(INT0, INT_MODE_ANY);
+
+    sei(); // Enable Global Interrupt.
     while (1) {
 
-        
-        LCD4_data(keypad_read());
-        _delay_ms(250);
+
+
+        _delay_ms(500);
+
+
 
 
     }
