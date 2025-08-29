@@ -21,6 +21,7 @@
 #include "kit_keypad.h"
 #include "_7seg.h"
 #include "mlcd4.h"
+#include "ADC.h"
 #include <string.h>
 
 
@@ -65,22 +66,36 @@ void init_INT(char INT, char mode) {
 
 int main() {
 
-
-    init_LEDS();
+    init_LCD4();
     
-    
-    init_INT(INT0, INT_MODE_ANY);
+    int data = 0;
+    init_ADC(CH0, Vref_AVCC, PRE_128);
 
-    sei(); // Enable Global Interrupt.
+
+
     while (1) {
 
 
-
+        // Start Conversion
+        ADC_SC();
+        ADC_wait();
+        data = ADC_read();
+        
+        LCD4_num(data);
+        
+        _delay_ms(5);
+        
+        ADC_select_CH(CH1);
+        ADC_SC();
+        ADC_wait();
+        data = ADC_read();
+        LCD4_cmd(0xC0);
+        LCD4_num(data);
+        
+        
         _delay_ms(500);
-
-
-
-
+        LCD4_cmd(0x01);
+        ADC_select_CH(CH0);
     }
 
     return (EXIT_SUCCESS);
