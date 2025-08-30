@@ -13,6 +13,7 @@
       <itemPath>mlcd8.h</itemPath>
       <itemPath>mlcd4.h</itemPath>
       <itemPath>ADC.h</itemPath>
+      <itemPath>lm35.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -31,6 +32,7 @@
       <itemPath>mlcd8.c</itemPath>
       <itemPath>mlcd4.c</itemPath>
       <itemPath>ADC.c</itemPath>
+      <itemPath>lm35.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

@@ -22,6 +22,7 @@
 #include "_7seg.h"
 #include "mlcd4.h"
 #include "ADC.h"
+#include "lm35.h"
 #include <string.h>
 
 
@@ -66,37 +67,50 @@ void init_INT(char INT, char mode) {
 
 
 int data = 0;
+int i = 0;
+
+char str1[]= "Temp";
+char str2[]= " = ";
+char str3[]= "'C";
 
 ISR(ADC_vect) {
 
-    data = ADC_read();
+    data = LM35_read();
     LCD4_cmd(0x01);
+    LCD4_str(str1);
+    LCD4_num(i);
+    LCD4_str(str2);
     LCD4_num(data);
+    LCD4_str(str3);
 
 }
 
 int main() {
 
-
+    
 
 
     init_LCD4();
 
-    init_ADC(CH0, Vref_AVCC, PRE_128);
+    init_LM35(TempSensor0);
 
-    DDRB |= (1 << PB7);
-    // Set Enable Global Interrupt
     sei();
-
+    
     while (1) {
 
-        ADC_SC();
-        _delay_ms(500);
-
-
-        PORTB ^= (1 << PB7);
-
-
+      
+        LM35_sample();
+        _delay_ms(900);
+        i++;
+        if(i > 3){
+            i = 0;
+        }
+        LM35_select(TempSensor0+i);
+        
+        
+        
+       
+        
 
 
     }
