@@ -39,6 +39,8 @@ void ADC_SC();
 
 void ADC_wait();
 
+void ADC_INT_EN();
+
 int ADC_read();
 #endif	/* ADC_H */
 

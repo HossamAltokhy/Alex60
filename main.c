@@ -64,27 +64,41 @@ void init_INT(char INT, char mode) {
 
 }
 
+
+int data = 0;
+
+ISR(ADC_vect) {
+
+    data = ADC_read();
+    LCD4_cmd(0x01);
+    LCD4_num(data);
+
+}
+
 int main() {
 
+
+
+
     init_LCD4();
-    
-    int data = 0;
-    init_ADC(CH0_CH1, Vref_AVCC, PRE_128);
 
+    init_ADC(CH0, Vref_AVCC, PRE_128);
 
+    DDRB |= (1 << PB7);
+    // Set Enable Global Interrupt
+    sei();
 
     while (1) {
 
-
         ADC_SC();
-        ADC_wait();
-        
-        data  = ADC_read();
-        
-        LCD4_cmd(0x01);
-        LCD4_num(data);
-        _delay_ms(200);
-        
+        _delay_ms(500);
+
+
+        PORTB ^= (1 << PB7);
+
+
+
+
     }
 
     return (EXIT_SUCCESS);

@@ -52,7 +52,17 @@ int ADC_read(){
     
     //        ADCH                ADCL   
     // |-|-|-|-|-|-|x|x|    |x|x|x|x|x|x|x|x|
-    // |x|x|x|x|x|x|x|x|    |x|x|-|-|-|-|-|-|  
+//    int data = ADCL;
+//   // data |= ADCH <<8;
+//    char x = ADCH;
+//    
+//    // |x|x|x|x|x|x|x|x|    |x|x|-|-|-|-|-|-|  
+//    int data = ADCL;
+//    data |= ADCH <<8;
+//    data = data>>6;
+//    
+//    // 
+//    data = ADCH <<2;    
     
     return ADCW*ADC_step; //  NOTE 
 }
@@ -65,6 +75,12 @@ void init_ADC(char CH, char REF, char FREQ){
     // select REF
     ADC_select_REF(REF);
    
+    // ADC Interrupt Enable
+    ADC_INT_EN();
     // Enable
     ADC_EN();
+}
+
+void ADC_INT_EN(){
+    ADCSRA |= (1<<ADIE);
 }
