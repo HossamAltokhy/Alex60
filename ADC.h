@@ -17,6 +17,8 @@
 #define CH6   6
 #define CH7   7
 
+#define CH0_CH1  16 //0x10// 00010000
+
 #define Vref_AREF    0    // 0x00 //if no shift is needed.
 #define Vref_AVCC    1    // 0x40 //if no shift is needed.
 #define Vref_2_56    3    // 0xC0 //if no shift is needed.

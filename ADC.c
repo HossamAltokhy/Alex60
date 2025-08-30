@@ -49,6 +49,11 @@ void ADC_wait(){
 }
 
 int ADC_read(){
+    
+    //        ADCH                ADCL   
+    // |-|-|-|-|-|-|x|x|    |x|x|x|x|x|x|x|x|
+    // |x|x|x|x|x|x|x|x|    |x|x|-|-|-|-|-|-|  
+    
     return ADCW*ADC_step; //  NOTE 
 }
 

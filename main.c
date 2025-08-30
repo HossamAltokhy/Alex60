@@ -69,33 +69,22 @@ int main() {
     init_LCD4();
     
     int data = 0;
-    init_ADC(CH0, Vref_AVCC, PRE_128);
+    init_ADC(CH0_CH1, Vref_AVCC, PRE_128);
 
 
 
     while (1) {
 
 
-        // Start Conversion
         ADC_SC();
         ADC_wait();
-        data = ADC_read();
         
-        LCD4_num(data);
+        data  = ADC_read();
         
-        _delay_ms(5);
-        
-        ADC_select_CH(CH1);
-        ADC_SC();
-        ADC_wait();
-        data = ADC_read();
-        LCD4_cmd(0xC0);
-        LCD4_num(data);
-        
-        
-        _delay_ms(500);
         LCD4_cmd(0x01);
-        ADC_select_CH(CH0);
+        LCD4_num(data);
+        _delay_ms(200);
+        
     }
 
     return (EXIT_SUCCESS);
