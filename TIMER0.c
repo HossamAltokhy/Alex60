@@ -36,9 +36,11 @@ void Timer0_SELECT_MODE(char TIMER_MODE) {
         case TIMER0_PWM:
             TCCR0 &= ~(1 << WGM01);
             TCCR0 |= (1 << WGM00);
+            OCR0 = TIMER0_OCR0; // 100
             break;
         case TIMER0_FPWM:
             TCCR0 |= ((1 << WGM01) | (1 << WGM00));
+            OCR0 = TIMER0_OCR0; // 100
             break;
     }
 }
