@@ -14,6 +14,7 @@
       <itemPath>mlcd4.h</itemPath>
       <itemPath>ADC.h</itemPath>
       <itemPath>lm35.h</itemPath>
+      <itemPath>TIMER0.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -33,6 +34,7 @@
       <itemPath>mlcd4.c</itemPath>
       <itemPath>ADC.c</itemPath>
       <itemPath>lm35.c</itemPath>
+      <itemPath>TIMER0.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

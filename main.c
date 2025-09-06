@@ -23,6 +23,7 @@
 #include "mlcd4.h"
 #include "ADC.h"
 #include "lm35.h"
+#include "TIMER0.h"
 #include <string.h>
 
 
@@ -66,53 +67,36 @@ void init_INT(char INT, char mode) {
 }
 
 
-int data = 0;
-int i = 0;
 
-char str1[]= "Temp";
-char str2[]= " = ";
-char str3[]= "'C";
-
-ISR(ADC_vect) {
-
-    data = LM35_read();
-    LCD4_cmd(0x01);
-    LCD4_str(str1);
-    LCD4_num(i);
-    LCD4_str(str2);
-    LCD4_num(data);
-    LCD4_str(str3);
-
+ISR(TIMER0_OVF_vect){
+    
+    // 61 times per Second
+    // 16.25 mSec code
+    static int x = 0;
+    x++;
+    if(x == 61){
+        led_tog(LED1);
+        x = 0;
+    }
+    
+    
+    
 }
+
 
 int main() {
 
+    init_LEDS();
+    init_Timer0(TIMER0_NORMAL, TIMER0_PRE_1024);
     
-
-
-    init_LCD4();
-
-    init_LM35(TempSensor0);
-
+    
     sei();
+
+
     
     while (1) {
 
-      
-        LM35_sample();
-        _delay_ms(900);
-        i++;
-        if(i > 3){
-            i = 0;
-        }
-        LM35_select(TempSensor0+i);
-        
-        
-        
-       
-        
-
-
+    
     }
 
     return (EXIT_SUCCESS);
