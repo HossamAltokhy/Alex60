@@ -68,41 +68,54 @@ void init_INT(char INT, char mode) {
 
 
 // 0 ..... 100
-ISR(TIMER0_COMP_vect){
-    
-   
-        led_tog(LED1);
-    
-    
-    
-    
-}
 
+ISR(TIMER0_COMP_vect) {
+
+
+    led_tog(LED1);
+
+    ADC_SC();
+
+
+
+}
+int data = 0;
+ISR(ADC_vect) {
+
+    data = ADC_read() / 10.0;
+
+
+}
 
 int main() {
 
     init_buttons();
-    
+    init_ADC(CH0, Vref_AVCC, PRE_128);
+
+    init_LCD4();
     init_LEDS();
     init_Timer0(TIMER0_CTC, TIMER0_PRE_1024);
-    
-//    OCR0 = 150;
+
+    OCR0 = 250;
     sei();
 
 
-    
+
     while (1) {
 
-        if(isPressed(PD1)){
+        LCD4_cmd(0x01);
+        LCD4_num(data);
+
+        if (isPressed(PD1)) {
             OCR0 += 10;
             _delay_ms(250);
         }
-        
-        if(isPressed(PD2)){
+
+        if (isPressed(PD2)) {
             OCR0 -= 10;
             _delay_ms(250);
         }
-    
+
     }
 
     return (EXIT_SUCCESS);
