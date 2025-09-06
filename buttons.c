@@ -7,10 +7,11 @@
 
 void init_buttons(){
     
-    setPINA_DIR(button, IN);
+    setPIND_DIR(button0, IN);
+    setPIND_DIR(button1, IN);
     
 }
 
-char isPressed(){
-    return checkPINA(button);
+char isPressed(char pin){
+    return checkPIND(pin);
 }

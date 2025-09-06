@@ -25,11 +25,14 @@
 #define TIMER0_NO_PRE    1
 #define TIMER0_PRE_1024  5
 
+#define TIMER0_OCR0      100
+
 void init_Timer0(char mode, char clock);
 
 void Timer0_CLOCK_SELECT(char clock);
 void Timer0_SELECT_MODE(char TIMER_MODE);
 void Timer0_OVF_INT(char state);
+void Timer0_OCF_INT(char state);
 
 #endif	/* TIMER0_H */
 

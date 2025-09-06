@@ -8,11 +8,12 @@
 #ifndef BUTTONS_H
 #define	BUTTONS_H
 
-#define button 0  // PA0
+#define button0 1  
+#define button1 2  
 
 void init_buttons();
 
-char isPressed();
+char isPressed(char pin);
 
 #endif	/* BUTTONS_H */
 

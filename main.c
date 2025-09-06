@@ -67,17 +67,12 @@ void init_INT(char INT, char mode) {
 }
 
 
-
-ISR(TIMER0_OVF_vect){
+// 0 ..... 100
+ISR(TIMER0_COMP_vect){
     
-    // 61 times per Second
-    // 16.25 mSec code
-    static int x = 0;
-    x++;
-    if(x == 61){
+   
         led_tog(LED1);
-        x = 0;
-    }
+    
     
     
     
@@ -86,16 +81,27 @@ ISR(TIMER0_OVF_vect){
 
 int main() {
 
+    init_buttons();
+    
     init_LEDS();
-    init_Timer0(TIMER0_NORMAL, TIMER0_PRE_1024);
+    init_Timer0(TIMER0_CTC, TIMER0_PRE_1024);
     
-    
+//    OCR0 = 150;
     sei();
 
 
     
     while (1) {
 
+        if(isPressed(PD1)){
+            OCR0 += 10;
+            _delay_ms(250);
+        }
+        
+        if(isPressed(PD2)){
+            OCR0 -= 10;
+            _delay_ms(250);
+        }
     
     }
 
