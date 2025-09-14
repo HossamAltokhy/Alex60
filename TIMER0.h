@@ -25,7 +25,7 @@
 #define TIMER0_NO_PRE    1
 #define TIMER0_PRE_1024  5
 
-#define TIMER0_OCR0      100
+#define TIMER0_OCR0      6  //37 // 24  // 6
 
 void init_Timer0(char mode, char clock);
 
