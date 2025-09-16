@@ -23,7 +23,7 @@
 #include "mlcd4.h"
 #include "ADC.h"
 #include "lm35.h"
-#include "TIMER0.h"
+#include "TIMER2.h"
 #include <string.h>
 
 
@@ -47,19 +47,23 @@ char str [] = "Hello World";
 // 0 ..... 100
 
 
-ISR(TIMER0_COMP_vect){
+ISR(TIMER2_OVF_vect){
+    
+   
+    togglePORTA();
     
 }
 
 int main() {
 
-    init_buttons();
-    
+    //init_buttons();
+    setPORTA_DIR(OUT);
     // OC0 pin as output pin.
-    setPINB_DIR(PB3, OUT);
-    TCCR0 |= (1<<COM01);
-    TCCR0 &= ~(1<<COM00);
-    init_Timer0(TIMER0_FPWM, TIMER0_PRE_1024);
+    setPIND_DIR(PD7, OUT);
+    TCCR2 |= (1<<COM21);
+    TCCR2 &= ~(1<<COM20);
+//    init_Timer2(TIMER2_FPWM, TIMER2_PRE_1024);
+    init_Timer2_Async(TIMER2_NORMAL);
 
     
 //    OCR_0= (1.0/16.32)*255   = 16
@@ -67,17 +71,17 @@ int main() {
 //    OCR_180= (2.0/16.32)*255  = 31
     sei();
 
-    init_LCD4();
+    //init_LCD4();
     
 
 
     while (1) {
 
       
-        OCR0 = 6;
+        OCR2 = 6;
        _delay_ms(1000);
        
-       OCR0  = 37;
+        OCR2  = 37;
 
        _delay_ms(1000);
     }

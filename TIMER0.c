@@ -6,18 +6,20 @@ void init_Timer0(char mode, char clock) {
 
     Timer0_SELECT_MODE(mode);
 
-
+    // Timer0_OC0_MODE();
 
 
     // Start....
     Timer0_CLOCK_SELECT(clock);
 }
 
+
 void Timer0_CLOCK_SELECT(char clock) {
     // TCCR0
     TCCR0 &= 0xF8; // 11111000
     TCCR0 |= clock;
 }
+
 
 void Timer0_SELECT_MODE(char TIMER_MODE) {
     switch (TIMER_MODE) {
@@ -45,6 +47,7 @@ void Timer0_SELECT_MODE(char TIMER_MODE) {
     }
 }
 
+
 void Timer0_OVF_INT(char state) {
     // Enable individual Timer0 OV Interrupt
     if (state) {
@@ -54,6 +57,7 @@ void Timer0_OVF_INT(char state) {
     }
 
 }
+
 
 void Timer0_OCF_INT(char state) {
     // Enable individual Timer0 OV Interrupt
