@@ -31,7 +31,7 @@ c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../av
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
                               C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o (exit)
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
-                              build/default/production/main.o (__do_copy_data)
+                              build/default/production/_7seg.o (__do_copy_data)
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ltoa_ncheck.o)
                               build/default/production/mlcd8.o (__ltoa_ncheck)
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ultoa_ncheck.o)
@@ -46,7 +46,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/main.o
  .data          0x0000000000000000        0x0 build/default/production/main.o
  .bss           0x0000000000000000        0x0 build/default/production/main.o
- .data.str      0x0000000000000000        0xc build/default/production/main.o
  .text          0x0000000000000000        0x0 build/default/production/DIO.o
  .data          0x0000000000000000        0x0 build/default/production/DIO.o
  .bss           0x0000000000000000        0x0 build/default/production/DIO.o
@@ -57,14 +56,14 @@ Discarded input sections
                 0x0000000000000000        0x4 build/default/production/DIO.o
  .text.togglePINA
                 0x0000000000000000       0x16 build/default/production/DIO.o
+ .text.togglePORTA
+                0x0000000000000000        0x8 build/default/production/DIO.o
  .text.checkPINA
                 0x0000000000000000       0x16 build/default/production/DIO.o
  .text.checkPORTA
                 0x0000000000000000        0x4 build/default/production/DIO.o
  .text.setPINB_DIR
                 0x0000000000000000       0x3e build/default/production/DIO.o
- .text.setPORTB_DIR
-                0x0000000000000000       0x12 build/default/production/DIO.o
  .text.setPINB  0x0000000000000000       0x3e build/default/production/DIO.o
  .text.setPORTB
                 0x0000000000000000       0x12 build/default/production/DIO.o
@@ -91,6 +90,8 @@ Discarded input sections
                 0x0000000000000000       0x16 build/default/production/DIO.o
  .text.checkPORTC
                 0x0000000000000000        0x4 build/default/production/DIO.o
+ .text.setPIND_DIR
+                0x0000000000000000       0x3e build/default/production/DIO.o
  .text.setPORTD_DIR
                 0x0000000000000000       0x12 build/default/production/DIO.o
  .text.setPIND  0x0000000000000000       0x3e build/default/production/DIO.o
@@ -349,10 +350,37 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/TIMER2.o
  .data          0x0000000000000000        0x0 build/default/production/TIMER2.o
  .bss           0x0000000000000000        0x0 build/default/production/TIMER2.o
+ .text.Timer2_CLEAR_INTs
+                0x0000000000000000        0x8 build/default/production/TIMER2.o
  .text.Timer2_CLOCK_SELECT
                 0x0000000000000000        0xe build/default/production/TIMER2.o
+ .text.Timer2_OVF_INT
+                0x0000000000000000       0x14 build/default/production/TIMER2.o
+ .text.Timer2_OCF_INT
+                0x0000000000000000       0x14 build/default/production/TIMER2.o
+ .text.Timer2_SELECT_MODE
+                0x0000000000000000       0x54 build/default/production/TIMER2.o
  .text.init_Timer2
                 0x0000000000000000       0x12 build/default/production/TIMER2.o
+ .text.init_Timer2_Async
+                0x0000000000000000       0x4e build/default/production/TIMER2.o
+ .debug_info    0x0000000000000000      0x427 build/default/production/TIMER2.o
+ .debug_abbrev  0x0000000000000000       0xb4 build/default/production/TIMER2.o
+ .debug_loc     0x0000000000000000      0x17a build/default/production/TIMER2.o
+ .debug_aranges
+                0x0000000000000000       0x50 build/default/production/TIMER2.o
+ .debug_ranges  0x0000000000000000       0x40 build/default/production/TIMER2.o
+ .debug_line    0x0000000000000000      0x1da build/default/production/TIMER2.o
+ .debug_str     0x0000000000000000        0x0 build/default/production/TIMER2.o
+ .comment       0x0000000000000000       0x30 build/default/production/TIMER2.o
+ .debug_frame   0x0000000000000000       0x94 build/default/production/TIMER2.o
+ .text          0x0000000000000000        0x0 build/default/production/TIMER1.o
+ .data          0x0000000000000000        0x0 build/default/production/TIMER1.o
+ .bss           0x0000000000000000        0x0 build/default/production/TIMER1.o
+ .text.Timer1_OVF_INT
+                0x0000000000000000       0x14 build/default/production/TIMER1.o
+ .text.Timer1_OCF_INT
+                0x0000000000000000       0x14 build/default/production/TIMER1.o
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
@@ -568,6 +596,7 @@ LOAD build/default/production/lm35.o
 LOAD build/default/production/TIMER0.o
 LOAD build/default/production/EXT_INT.o
 LOAD build/default/production/TIMER2.o
+LOAD build/default/production/TIMER1.o
 START GROUP
 LOAD c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a
 END GROUP
@@ -824,7 +853,7 @@ END GROUP
  .comment       0x0000000000000000       0x2f build/default/production/main.o
                                          0x30 (size before relaxing)
  .comment       0x000000000000002f       0x30 build/default/production/DIO.o
- .comment       0x000000000000002f       0x30 build/default/production/TIMER2.o
+ .comment       0x000000000000002f       0x30 build/default/production/TIMER1.o
 
 .stack.descriptors.hdr
                 0x0000000000000000        0xe
@@ -846,57 +875,56 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x190
+.debug_aranges  0x0000000000000000      0x188
  *(.debug_aranges)
  .debug_aranges
                 0x0000000000000000       0x28 build/default/production/main.o
  .debug_aranges
                 0x0000000000000028      0x118 build/default/production/DIO.o
  .debug_aranges
-                0x0000000000000140       0x50 build/default/production/TIMER2.o
+                0x0000000000000140       0x48 build/default/production/TIMER1.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x14d7
+.debug_info     0x0000000000000000     0x1329
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_info    0x00000000000004e6      0x3e5 build/default/production/main.o
- .debug_info    0x00000000000008cb      0x7e5 build/default/production/DIO.o
- .debug_info    0x00000000000010b0      0x427 build/default/production/TIMER2.o
+ .debug_info    0x00000000000004e6      0x2ce build/default/production/main.o
+ .debug_info    0x00000000000007b4      0x7e5 build/default/production/DIO.o
+ .debug_info    0x0000000000000f99      0x390 build/default/production/TIMER1.o
 
-.debug_abbrev   0x0000000000000000      0x7d5
+.debug_abbrev   0x0000000000000000      0x710
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_abbrev  0x00000000000004a3      0x14c build/default/production/main.o
- .debug_abbrev  0x00000000000005ef      0x132 build/default/production/DIO.o
- .debug_abbrev  0x0000000000000721       0xb4 build/default/production/TIMER2.o
+ .debug_abbrev  0x00000000000004a3       0x99 build/default/production/main.o
+ .debug_abbrev  0x000000000000053c      0x132 build/default/production/DIO.o
+ .debug_abbrev  0x000000000000066e       0xa2 build/default/production/TIMER1.o
 
-.debug_line     0x0000000000000000      0x8ba
+.debug_line     0x0000000000000000      0x78f
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x119 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_line    0x0000000000000119      0x14c build/default/production/main.o
- .debug_line    0x0000000000000265      0x47b build/default/production/DIO.o
- .debug_line    0x00000000000006e0      0x1da build/default/production/TIMER2.o
+ .debug_line    0x0000000000000119       0xca build/default/production/main.o
+ .debug_line    0x00000000000001e3      0x47b build/default/production/DIO.o
+ .debug_line    0x000000000000065e      0x131 build/default/production/TIMER1.o
 
-.debug_frame    0x0000000000000000      0x324
+.debug_frame    0x0000000000000000      0x2d4
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0x7c build/default/production/main.o
- .debug_frame   0x000000000000007c      0x214 build/default/production/DIO.o
- .debug_frame   0x0000000000000290       0x94 build/default/production/TIMER2.o
+ .debug_frame   0x0000000000000000       0x44 build/default/production/main.o
+ .debug_frame   0x0000000000000044      0x214 build/default/production/DIO.o
+ .debug_frame   0x0000000000000258       0x7c build/default/production/TIMER1.o
 
-.debug_str      0x0000000000000000      0x1f5
+.debug_str      0x0000000000000000      0x201
  *(.debug_str)
  .debug_str     0x0000000000000000      0x196 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_str     0x0000000000000196       0x37 build/default/production/main.o
- .debug_str     0x00000000000001cd       0x28 build/default/production/DIO.o
- .debug_str     0x00000000000001f5        0x0 build/default/production/TIMER2.o
+ .debug_str     0x0000000000000196       0x36 build/default/production/main.o
+ .debug_str     0x00000000000001cc       0x28 build/default/production/DIO.o
+ .debug_str     0x00000000000001f4        0xd build/default/production/TIMER1.o
 
-.debug_loc      0x0000000000000000      0x71a
+.debug_loc      0x0000000000000000      0x695
  *(.debug_loc)
- .debug_loc     0x0000000000000000       0x48 build/default/production/main.o
- .debug_loc     0x0000000000000048      0x558 build/default/production/DIO.o
- .debug_loc     0x00000000000005a0      0x17a build/default/production/TIMER2.o
+ .debug_loc     0x0000000000000000      0x558 build/default/production/DIO.o
+ .debug_loc     0x0000000000000558      0x13d build/default/production/TIMER1.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -916,11 +944,11 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000      0x160
+.debug_ranges   0x0000000000000000      0x158
  *(.debug_ranges)
  .debug_ranges  0x0000000000000000       0x18 build/default/production/main.o
  .debug_ranges  0x0000000000000018      0x108 build/default/production/DIO.o
- .debug_ranges  0x0000000000000120       0x40 build/default/production/TIMER2.o
+ .debug_ranges  0x0000000000000120       0x38 build/default/production/TIMER1.o
 
 .debug_macro
  *(.debug_macro)
@@ -933,83 +961,71 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x3c C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
 
-.text.Timer2_SELECT_MODE
-                0x00000000000000a8       0x54
- .text.Timer2_SELECT_MODE
-                0x00000000000000a8       0x54 build/default/production/TIMER2.o
-                0x00000000000000a8                Timer2_SELECT_MODE
+.text.__vector_6
+                0x00000000000000a8       0x20
+ .text.__vector_6
+                0x00000000000000a8       0x20 build/default/production/main.o
+                0x00000000000000a8                __vector_6
 
-.text.main      0x00000000000000fc       0x50
- .text.main     0x00000000000000fc       0x50 build/default/production/main.o
-                0x00000000000000fc                main
+.text.main      0x00000000000000c8       0x1e
+ .text.main     0x00000000000000c8       0x1e build/default/production/main.o
+                0x00000000000000c8                main
 
-.text.init_Timer2_Async
-                0x000000000000014c       0x4e
- .text.init_Timer2_Async
-                0x000000000000014c       0x4e build/default/production/TIMER2.o
-                0x000000000000014c                init_Timer2_Async
+.text.init_TIMER1
+                0x00000000000000e6       0x1e
+ .text.init_TIMER1
+                0x00000000000000e6       0x1e build/default/production/TIMER1.o
+                0x00000000000000e6                init_TIMER1
 
-.text.__vector_5
-                0x000000000000019a       0x48
- .text.__vector_5
-                0x000000000000019a       0x48 build/default/production/main.o
-                0x000000000000019a                __vector_5
-
-.text.setPIND_DIR
-                0x00000000000001e2       0x3e
- .text.setPIND_DIR
-                0x00000000000001e2       0x3e build/default/production/DIO.o
-                0x00000000000001e2                setPIND_DIR
-
-.text.Timer2_OVF_INT
-                0x0000000000000220       0x14
- .text.Timer2_OVF_INT
-                0x0000000000000220       0x14 build/default/production/TIMER2.o
-                0x0000000000000220                Timer2_OVF_INT
-
-.text.Timer2_OCF_INT
-                0x0000000000000234       0x14
- .text.Timer2_OCF_INT
-                0x0000000000000234       0x14 build/default/production/TIMER2.o
-                0x0000000000000234                Timer2_OCF_INT
+.text.Timer1_ICPF_INT
+                0x0000000000000104       0x14
+ .text.Timer1_ICPF_INT
+                0x0000000000000104       0x14 build/default/production/TIMER1.o
+                0x0000000000000104                Timer1_ICPF_INT
 
 .text.setPORTA_DIR
-                0x0000000000000248       0x12
+                0x0000000000000118       0x12
  .text.setPORTA_DIR
-                0x0000000000000248       0x12 build/default/production/DIO.o
-                0x0000000000000248                setPORTA_DIR
+                0x0000000000000118       0x12 build/default/production/DIO.o
+                0x0000000000000118                setPORTA_DIR
 
-.text.togglePORTA
-                0x000000000000025a        0x8
- .text.togglePORTA
-                0x000000000000025a        0x8 build/default/production/DIO.o
-                0x000000000000025a                togglePORTA
+.text.setPORTB_DIR
+                0x000000000000012a       0x12
+ .text.setPORTB_DIR
+                0x000000000000012a       0x12 build/default/production/DIO.o
+                0x000000000000012a                setPORTB_DIR
 
-.text.Timer2_CLEAR_INTs
-                0x0000000000000262        0x8
- .text.Timer2_CLEAR_INTs
-                0x0000000000000262        0x8 build/default/production/TIMER2.o
-                0x0000000000000262                Timer2_CLEAR_INTs
+.text.TIMER1_MODE
+                0x000000000000013c       0x10
+ .text.TIMER1_MODE
+                0x000000000000013c       0x10 build/default/production/TIMER1.o
+                0x000000000000013c                TIMER1_MODE
 
-.text           0x000000000000026a        0x4
- .text          0x000000000000026a        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
-                0x000000000000026a                __vector_1
-                0x000000000000026a                __vector_12
-                0x000000000000026a                __bad_interrupt
-                0x000000000000026a                __vector_6
-                0x000000000000026a                __vector_3
-                0x000000000000026a                __vector_11
-                0x000000000000026a                __vector_13
-                0x000000000000026a                __vector_17
-                0x000000000000026a                __vector_19
-                0x000000000000026a                __vector_7
-                0x000000000000026a                __vector_4
-                0x000000000000026a                __vector_9
-                0x000000000000026a                __vector_2
-                0x000000000000026a                __vector_15
-                0x000000000000026a                __vector_8
-                0x000000000000026a                __vector_14
-                0x000000000000026a                __vector_10
-                0x000000000000026a                __vector_16
-                0x000000000000026a                __vector_18
-                0x000000000000026a                __vector_20
+.text.TIMER1_clock_SELECT
+                0x000000000000014c        0xe
+ .text.TIMER1_clock_SELECT
+                0x000000000000014c        0xe build/default/production/TIMER1.o
+                0x000000000000014c                TIMER1_clock_SELECT
+
+.text           0x000000000000015a        0x4
+ .text          0x000000000000015a        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
+                0x000000000000015a                __vector_1
+                0x000000000000015a                __vector_12
+                0x000000000000015a                __bad_interrupt
+                0x000000000000015a                __vector_3
+                0x000000000000015a                __vector_11
+                0x000000000000015a                __vector_13
+                0x000000000000015a                __vector_17
+                0x000000000000015a                __vector_19
+                0x000000000000015a                __vector_7
+                0x000000000000015a                __vector_5
+                0x000000000000015a                __vector_4
+                0x000000000000015a                __vector_9
+                0x000000000000015a                __vector_2
+                0x000000000000015a                __vector_15
+                0x000000000000015a                __vector_8
+                0x000000000000015a                __vector_14
+                0x000000000000015a                __vector_10
+                0x000000000000015a                __vector_16
+                0x000000000000015a                __vector_18
+                0x000000000000015a                __vector_20

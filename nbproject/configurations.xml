@@ -17,6 +17,7 @@
       <itemPath>TIMER0.h</itemPath>
       <itemPath>EXT_INT.h</itemPath>
       <itemPath>TIMER2.h</itemPath>
+      <itemPath>TIMER1.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -39,6 +40,7 @@
       <itemPath>TIMER0.c</itemPath>
       <itemPath>EXT_INT.c</itemPath>
       <itemPath>TIMER2.c</itemPath>
+      <itemPath>TIMER1.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

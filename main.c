@@ -24,66 +24,41 @@
 #include "ADC.h"
 #include "lm35.h"
 #include "TIMER2.h"
+#include "TIMER1.h"
+#include "TIMER0.h"
 #include <string.h>
 
 
 
 
-char str [] = "Hello World";
-
-//ISR(INT0_vect) {
-//    
-//}
-//ISR(INT1_vect) {
-//    
-//}
-//ISR(INT2_vect) {
-//    
-//}
-
-
-
-
-// 0 ..... 100
-
-
-ISR(TIMER2_OVF_vect){
+ISR(TIMER1_CAPT_vect){
     
    
-    togglePORTA();
+    PORTA =  ICR1L;
+    PORTB =  ICR1H;
     
 }
 
 int main() {
 
-    //init_buttons();
-    setPORTA_DIR(OUT);
-    // OC0 pin as output pin.
-    setPIND_DIR(PD7, OUT);
-    TCCR2 |= (1<<COM21);
-    TCCR2 &= ~(1<<COM20);
-//    init_Timer2(TIMER2_FPWM, TIMER2_PRE_1024);
-    init_Timer2_Async(TIMER2_NORMAL);
 
+    setPORTA_DIR(OUT);
+    setPORTB_DIR(OUT);
     
-//    OCR_0= (1.0/16.32)*255   = 16
-//    OCR_90= (1.5/16.32)*255   = 24
-//    OCR_180= (2.0/16.32)*255  = 31
+    init_TIMER1(TIMER1_CTC, TIMER1_PRE_1024);
+    
+    Timer1_ICPF_INT(state_ENABLE);
+    
     sei();
 
-    //init_LCD4();
+   
     
 
 
     while (1) {
 
       
-        OCR2 = 6;
-       _delay_ms(1000);
-       
-        OCR2  = 37;
 
-       _delay_ms(1000);
     }
 
     return (EXIT_SUCCESS);

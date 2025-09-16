@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c DIO.c leds.c buttons.c keypad.c kit_keypad.c _7seg.c mlcd8.c mlcd4.c ADC.c lm35.c TIMER0.c EXT_INT.c TIMER2.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c DIO.c leds.c buttons.c keypad.c kit_keypad.c _7seg.c mlcd8.c mlcd4.c ADC.c lm35.c TIMER0.c EXT_INT.c TIMER2.c TIMER1.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/keypad.o ${OBJECTDIR}/kit_keypad.o ${OBJECTDIR}/_7seg.o ${OBJECTDIR}/mlcd8.o ${OBJECTDIR}/mlcd4.o ${OBJECTDIR}/ADC.o ${OBJECTDIR}/lm35.o ${OBJECTDIR}/TIMER0.o ${OBJECTDIR}/EXT_INT.o ${OBJECTDIR}/TIMER2.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/DIO.o.d ${OBJECTDIR}/leds.o.d ${OBJECTDIR}/buttons.o.d ${OBJECTDIR}/keypad.o.d ${OBJECTDIR}/kit_keypad.o.d ${OBJECTDIR}/_7seg.o.d ${OBJECTDIR}/mlcd8.o.d ${OBJECTDIR}/mlcd4.o.d ${OBJECTDIR}/ADC.o.d ${OBJECTDIR}/lm35.o.d ${OBJECTDIR}/TIMER0.o.d ${OBJECTDIR}/EXT_INT.o.d ${OBJECTDIR}/TIMER2.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/keypad.o ${OBJECTDIR}/kit_keypad.o ${OBJECTDIR}/_7seg.o ${OBJECTDIR}/mlcd8.o ${OBJECTDIR}/mlcd4.o ${OBJECTDIR}/ADC.o ${OBJECTDIR}/lm35.o ${OBJECTDIR}/TIMER0.o ${OBJECTDIR}/EXT_INT.o ${OBJECTDIR}/TIMER2.o ${OBJECTDIR}/TIMER1.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/DIO.o.d ${OBJECTDIR}/leds.o.d ${OBJECTDIR}/buttons.o.d ${OBJECTDIR}/keypad.o.d ${OBJECTDIR}/kit_keypad.o.d ${OBJECTDIR}/_7seg.o.d ${OBJECTDIR}/mlcd8.o.d ${OBJECTDIR}/mlcd4.o.d ${OBJECTDIR}/ADC.o.d ${OBJECTDIR}/lm35.o.d ${OBJECTDIR}/TIMER0.o.d ${OBJECTDIR}/EXT_INT.o.d ${OBJECTDIR}/TIMER2.o.d ${OBJECTDIR}/TIMER1.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/keypad.o ${OBJECTDIR}/kit_keypad.o ${OBJECTDIR}/_7seg.o ${OBJECTDIR}/mlcd8.o ${OBJECTDIR}/mlcd4.o ${OBJECTDIR}/ADC.o ${OBJECTDIR}/lm35.o ${OBJECTDIR}/TIMER0.o ${OBJECTDIR}/EXT_INT.o ${OBJECTDIR}/TIMER2.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/keypad.o ${OBJECTDIR}/kit_keypad.o ${OBJECTDIR}/_7seg.o ${OBJECTDIR}/mlcd8.o ${OBJECTDIR}/mlcd4.o ${OBJECTDIR}/ADC.o ${OBJECTDIR}/lm35.o ${OBJECTDIR}/TIMER0.o ${OBJECTDIR}/EXT_INT.o ${OBJECTDIR}/TIMER2.o ${OBJECTDIR}/TIMER1.o
 
 # Source Files
-SOURCEFILES=main.c DIO.c leds.c buttons.c keypad.c kit_keypad.c _7seg.c mlcd8.c mlcd4.c ADC.c lm35.c TIMER0.c EXT_INT.c TIMER2.c
+SOURCEFILES=main.c DIO.c leds.c buttons.c keypad.c kit_keypad.c _7seg.c mlcd8.c mlcd4.c ADC.c lm35.c TIMER0.c EXT_INT.c TIMER2.c TIMER1.c
 
 
 
@@ -178,6 +178,12 @@ ${OBJECTDIR}/TIMER2.o: TIMER2.c  .generated_files/flags/default/30ef579cb1c16037
 	@${RM} ${OBJECTDIR}/TIMER2.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/TIMER2.o.d" -MT "${OBJECTDIR}/TIMER2.o.d" -MT ${OBJECTDIR}/TIMER2.o -o ${OBJECTDIR}/TIMER2.o TIMER2.c 
 	
+${OBJECTDIR}/TIMER1.o: TIMER1.c  .generated_files/flags/default/acb44e7bc986efe431b853e66efac1c3e6a18fec .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/TIMER1.o.d 
+	@${RM} ${OBJECTDIR}/TIMER1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/TIMER1.o.d" -MT "${OBJECTDIR}/TIMER1.o.d" -MT ${OBJECTDIR}/TIMER1.o -o ${OBJECTDIR}/TIMER1.o TIMER1.c 
+	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/24312582250579ef564cf5178ed9ef8f2a9afa89 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
 	@${MKDIR} "${OBJECTDIR}" 
@@ -262,6 +268,12 @@ ${OBJECTDIR}/TIMER2.o: TIMER2.c  .generated_files/flags/default/a4b201f8e2468d74
 	@${RM} ${OBJECTDIR}/TIMER2.o.d 
 	@${RM} ${OBJECTDIR}/TIMER2.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/TIMER2.o.d" -MT "${OBJECTDIR}/TIMER2.o.d" -MT ${OBJECTDIR}/TIMER2.o -o ${OBJECTDIR}/TIMER2.o TIMER2.c 
+	
+${OBJECTDIR}/TIMER1.o: TIMER1.c  .generated_files/flags/default/5da2f2ba283c07ec931030e89d985fa8c1e8171 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/TIMER1.o.d 
+	@${RM} ${OBJECTDIR}/TIMER1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/TIMER1.o.d" -MT "${OBJECTDIR}/TIMER1.o.d" -MT ${OBJECTDIR}/TIMER1.o -o ${OBJECTDIR}/TIMER1.o TIMER1.c 
 	
 endif
 
