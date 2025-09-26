@@ -1,13 +1,15 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include "TIMER0.h"
+#include "TIMER1.h"
 
 void init_Timer0(char mode, char clock) {
 
     Timer0_SELECT_MODE(mode);
 
     // Timer0_OC0_MODE();
-
+    TCNT0 = 250;
+    Timer0_OVF_INT(state_ENABLE);
 
     // Start....
     Timer0_CLOCK_SELECT(clock);

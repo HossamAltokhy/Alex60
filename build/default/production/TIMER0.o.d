@@ -11,7 +11,7 @@ build/default/production/TIMER0.o.d build/default/production/TIMER0.o: \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\interrupt.h \
- TIMER0.h
+ TIMER0.h TIMER1.h
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h:
 
@@ -38,3 +38,5 @@ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h:
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\interrupt.h:
 
 TIMER0.h:
+
+TIMER1.h:

@@ -31,36 +31,51 @@
 
 
 
-ISR(TIMER1_CAPT_vect){
-    
-   
-    PORTA =  ICR1L;
-    PORTB =  ICR1H;
-    
-}
 
+void init_UART();
+char UART_receive();
 int main() {
 
-
-    setPORTA_DIR(OUT);
-    setPORTB_DIR(OUT);
     
-    init_TIMER1(TIMER1_CTC, TIMER1_PRE_1024);
     
-    Timer1_ICPF_INT(state_ENABLE);
+    init_UART();
     
-    sei();
 
    
-    
+    DDRA = 0xFF;
 
 
     while (1) {
 
-      
+        PORTA = UART_receive();
 
     }
 
     return (EXIT_SUCCESS);
 }
 
+void init_UART(){
+    // UCSRB 
+    
+    // Enable Tx, Rx
+    UCSRB |= (1<<TXEN)|(1<<RXEN);
+    
+    // Set BaudRate as 9600 while F_CPU = 16MHz
+    UBRRL = 103;
+}
+
+void UART_send(char data){
+    
+    // Pooling 
+    while(!(UCSRA & (1<<UDRE)));
+    UDR = data; 
+    
+}
+
+char UART_receive(){
+    
+    while(!(UCSRA & (1<<RXC)));
+    
+    return UDR;
+    
+}
