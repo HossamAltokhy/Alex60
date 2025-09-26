@@ -27,10 +27,8 @@
 #include "TIMER1.h"
 #include "TIMER0.h"
 #include <string.h>
+#include "UART.h"
 
-
-#define BAUDRATE_9600     9600
-//#define BAUDRATE_2400     2400
 
 
 
@@ -57,9 +55,6 @@ ISR(USART_RXC_vect){
 }
 
 
-void init_UART(int Baudrate);
-char UART_receive();
-void UART_send(char data);
 
 int main() {
 
@@ -89,39 +84,4 @@ int main() {
     }
 
     return (EXIT_SUCCESS);
-}
-
-void init_UART(int Baudrate){
-    // UCSRB 
-    
-    // Enable Tx, Rx
-    UCSRB |= (1<<TXEN)|(1<<RXEN);
-    
-    // Enable RX Interrupt
-    UCSRB |= (1<<RXCIE);
-    
-    // Set BaudRate as 9600 while F_CPU = 16MHz
-    //UBRRL = 103;
-    short UBAUDR = (F_CPU / 16.0/Baudrate)-1;
-    if(UBAUDR > 255){
-        UBRRH  = (char)(UBAUDR>>8);
-    }
-    UBRRL = (char) UBAUDR;
-    
-}
-
-void UART_send(char data){
-    
-    // Pooling 
-    while(!(UCSRA & (1<<UDRE)));
-    UDR = data; 
-    
-}
-
-char UART_receive(){
-    
-    while(!(UCSRA & (1<<RXC)));
-    
-    return UDR;
-    
 }

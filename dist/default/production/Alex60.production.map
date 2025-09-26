@@ -1,15 +1,15 @@
 Archive member included to satisfy reference by file (symbol)
 
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
-                              build/default/production/main.o (__subsf3)
+                              build/default/production/UART.o (__subsf3)
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3x.o)
                               c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o) (__addsf3x)
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
-                              build/default/production/main.o (__divsf3)
+                              build/default/production/lm35.o (__divsf3)
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3x.o)
                               c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o) (__divsf3x)
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fixsfsi.o)
-                              build/default/production/main.o (__fixsfsi)
+                              build/default/production/ADC.o (__fixsfsi)
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fixunssfsi.o)
                               c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fixsfsi.o) (__fixunssfsi)
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(floatsisf.o)
@@ -50,8 +50,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/main.o
  .data          0x0000000000000000        0x0 build/default/production/main.o
  .bss           0x0000000000000000        0x0 build/default/production/main.o
- .text.UART_receive
-                0x0000000000000000        0x8 build/default/production/main.o
  .text          0x0000000000000000        0x0 build/default/production/DIO.o
  .data          0x0000000000000000        0x0 build/default/production/DIO.o
  .bss           0x0000000000000000        0x0 build/default/production/DIO.o
@@ -350,6 +348,11 @@ Discarded input sections
  .debug_str     0x0000000000000000        0xd build/default/production/TIMER1.o
  .comment       0x0000000000000000       0x30 build/default/production/TIMER1.o
  .debug_frame   0x0000000000000000       0x7c build/default/production/TIMER1.o
+ .text          0x0000000000000000        0x0 build/default/production/UART.o
+ .data          0x0000000000000000        0x0 build/default/production/UART.o
+ .bss           0x0000000000000000        0x0 build/default/production/UART.o
+ .text.UART_receive
+                0x0000000000000000        0x8 build/default/production/UART.o
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
@@ -528,6 +531,7 @@ LOAD build/default/production/TIMER0.o
 LOAD build/default/production/EXT_INT.o
 LOAD build/default/production/TIMER2.o
 LOAD build/default/production/TIMER1.o
+LOAD build/default/production/UART.o
 START GROUP
 LOAD c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a
 END GROUP
@@ -787,6 +791,7 @@ END GROUP
  .comment       0x000000000000002f       0x30 build/default/production/leds.o
  .comment       0x000000000000002f       0x30 build/default/production/buttons.o
  .comment       0x000000000000002f       0x30 build/default/production/mlcd4.o
+ .comment       0x000000000000002f       0x30 build/default/production/UART.o
 
 .stack.descriptors.hdr
                 0x0000000000000000       0xd2
@@ -836,73 +841,81 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x220
+.debug_aranges  0x0000000000000000      0x238
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x40 build/default/production/main.o
+                0x0000000000000000       0x28 build/default/production/main.o
  .debug_aranges
-                0x0000000000000040      0x118 build/default/production/DIO.o
+                0x0000000000000028      0x118 build/default/production/DIO.o
  .debug_aranges
-                0x0000000000000158       0x50 build/default/production/leds.o
+                0x0000000000000140       0x50 build/default/production/leds.o
  .debug_aranges
-                0x00000000000001a8       0x28 build/default/production/buttons.o
+                0x0000000000000190       0x28 build/default/production/buttons.o
  .debug_aranges
-                0x00000000000001d0       0x50 build/default/production/mlcd4.o
+                0x00000000000001b8       0x50 build/default/production/mlcd4.o
+ .debug_aranges
+                0x0000000000000208       0x30 build/default/production/UART.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x1f3d
+.debug_info     0x0000000000000000     0x216b
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_info    0x00000000000004e6      0x4c5 build/default/production/main.o
- .debug_info    0x00000000000009ab      0x7e5 build/default/production/DIO.o
- .debug_info    0x0000000000001190      0x5b7 build/default/production/leds.o
- .debug_info    0x0000000000001747      0x22f build/default/production/buttons.o
- .debug_info    0x0000000000001976      0x5c7 build/default/production/mlcd4.o
+ .debug_info    0x00000000000004e6      0x43d build/default/production/main.o
+ .debug_info    0x0000000000000923      0x7e5 build/default/production/DIO.o
+ .debug_info    0x0000000000001108      0x5b7 build/default/production/leds.o
+ .debug_info    0x00000000000016bf      0x22f build/default/production/buttons.o
+ .debug_info    0x00000000000018ee      0x5c7 build/default/production/mlcd4.o
+ .debug_info    0x0000000000001eb5      0x2b6 build/default/production/UART.o
 
-.debug_abbrev   0x0000000000000000      0xac6
+.debug_abbrev   0x0000000000000000      0xb0e
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_abbrev  0x00000000000004a3      0x197 build/default/production/main.o
- .debug_abbrev  0x000000000000063a      0x132 build/default/production/DIO.o
- .debug_abbrev  0x000000000000076c      0x105 build/default/production/leds.o
- .debug_abbrev  0x0000000000000871       0x9a build/default/production/buttons.o
- .debug_abbrev  0x000000000000090b      0x1bb build/default/production/mlcd4.o
+ .debug_abbrev  0x00000000000004a3      0x138 build/default/production/main.o
+ .debug_abbrev  0x00000000000005db      0x132 build/default/production/DIO.o
+ .debug_abbrev  0x000000000000070d      0x105 build/default/production/leds.o
+ .debug_abbrev  0x0000000000000812       0x9a build/default/production/buttons.o
+ .debug_abbrev  0x00000000000008ac      0x1bb build/default/production/mlcd4.o
+ .debug_abbrev  0x0000000000000a67       0xa7 build/default/production/UART.o
 
-.debug_line     0x0000000000000000      0xb6a
+.debug_line     0x0000000000000000      0xbd4
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x119 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_line    0x0000000000000119      0x1e4 build/default/production/main.o
- .debug_line    0x00000000000002fd      0x47b build/default/production/DIO.o
- .debug_line    0x0000000000000778      0x18e build/default/production/leds.o
- .debug_line    0x0000000000000906       0x66 build/default/production/buttons.o
- .debug_line    0x000000000000096c      0x1fe build/default/production/mlcd4.o
+ .debug_line    0x0000000000000119      0x171 build/default/production/main.o
+ .debug_line    0x000000000000028a      0x47b build/default/production/DIO.o
+ .debug_line    0x0000000000000705      0x18e build/default/production/leds.o
+ .debug_line    0x0000000000000893       0x66 build/default/production/buttons.o
+ .debug_line    0x00000000000008f9      0x1fe build/default/production/mlcd4.o
+ .debug_line    0x0000000000000af7       0xdd build/default/production/UART.o
 
-.debug_frame    0x0000000000000000      0x42c
+.debug_frame    0x0000000000000000      0x440
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0xb0 build/default/production/main.o
- .debug_frame   0x00000000000000b0      0x214 build/default/production/DIO.o
- .debug_frame   0x00000000000002c4       0x84 build/default/production/leds.o
- .debug_frame   0x0000000000000348       0x34 build/default/production/buttons.o
- .debug_frame   0x000000000000037c       0xb0 build/default/production/mlcd4.o
+ .debug_frame   0x0000000000000000       0x80 build/default/production/main.o
+ .debug_frame   0x0000000000000080      0x214 build/default/production/DIO.o
+ .debug_frame   0x0000000000000294       0x84 build/default/production/leds.o
+ .debug_frame   0x0000000000000318       0x34 build/default/production/buttons.o
+ .debug_frame   0x000000000000034c       0xb0 build/default/production/mlcd4.o
+ .debug_frame   0x00000000000003fc       0x44 build/default/production/UART.o
 
-.debug_str      0x0000000000000000      0x26f
+.debug_str      0x0000000000000000      0x283
  *(.debug_str)
  .debug_str     0x0000000000000000      0x196 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_str     0x0000000000000196       0x41 build/default/production/main.o
- .debug_str     0x00000000000001d7       0x28 build/default/production/DIO.o
- .debug_str     0x00000000000001ff       0x4c build/default/production/leds.o
- .debug_str     0x000000000000024b       0x16 build/default/production/buttons.o
- .debug_str     0x0000000000000261        0xe build/default/production/mlcd4.o
+ .debug_str     0x0000000000000196       0x55 build/default/production/main.o
+ .debug_str     0x00000000000001eb       0x28 build/default/production/DIO.o
+ .debug_str     0x0000000000000213       0x4c build/default/production/leds.o
+ .debug_str     0x000000000000025f       0x16 build/default/production/buttons.o
+ .debug_str     0x0000000000000275        0xe build/default/production/mlcd4.o
+ .debug_str     0x0000000000000283        0x0 build/default/production/UART.o
 
 .debug_loc      0x0000000000000000      0x926
  *(.debug_loc)
- .debug_loc     0x0000000000000000       0x49 build/default/production/main.o
- .debug_loc     0x0000000000000049      0x558 build/default/production/DIO.o
- .debug_loc     0x00000000000005a1      0x194 build/default/production/leds.o
- .debug_loc     0x0000000000000735       0x21 build/default/production/buttons.o
- .debug_loc     0x0000000000000756      0x1d0 build/default/production/mlcd4.o
+ .debug_loc     0x0000000000000000       0x13 build/default/production/main.o
+ .debug_loc     0x0000000000000013      0x558 build/default/production/DIO.o
+ .debug_loc     0x000000000000056b      0x194 build/default/production/leds.o
+ .debug_loc     0x00000000000006ff       0x21 build/default/production/buttons.o
+ .debug_loc     0x0000000000000720      0x1d0 build/default/production/mlcd4.o
+ .debug_loc     0x00000000000008f0       0x36 build/default/production/UART.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -922,13 +935,14 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000      0x1d0
+.debug_ranges   0x0000000000000000      0x1d8
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x30 build/default/production/main.o
- .debug_ranges  0x0000000000000030      0x108 build/default/production/DIO.o
- .debug_ranges  0x0000000000000138       0x40 build/default/production/leds.o
- .debug_ranges  0x0000000000000178       0x18 build/default/production/buttons.o
- .debug_ranges  0x0000000000000190       0x40 build/default/production/mlcd4.o
+ .debug_ranges  0x0000000000000000       0x18 build/default/production/main.o
+ .debug_ranges  0x0000000000000018      0x108 build/default/production/DIO.o
+ .debug_ranges  0x0000000000000120       0x40 build/default/production/leds.o
+ .debug_ranges  0x0000000000000160       0x18 build/default/production/buttons.o
+ .debug_ranges  0x0000000000000178       0x40 build/default/production/mlcd4.o
+ .debug_ranges  0x00000000000001b8       0x20 build/default/production/UART.o
 
 .debug_macro
  *(.debug_macro)
@@ -976,7 +990,7 @@ LOAD data_init
 .text.init_UART
                 0x00000000000003ae       0x44
  .text.init_UART
-                0x00000000000003ae       0x44 build/default/production/main.o
+                0x00000000000003ae       0x44 build/default/production/UART.o
                 0x00000000000003ae                init_UART
 
 .text.avrlibc.fplib
@@ -1122,7 +1136,7 @@ LOAD data_init
 .text.UART_send
                 0x00000000000007da        0x8
  .text.UART_send
-                0x00000000000007da        0x8 build/default/production/main.o
+                0x00000000000007da        0x8 build/default/production/UART.o
                 0x00000000000007da                UART_send
 
 .text.avrlibc.fplib
