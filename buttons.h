@@ -8,8 +8,8 @@
 #ifndef BUTTONS_H
 #define	BUTTONS_H
 
-#define button0 1  
-#define button1 2  
+#define button0 0
+#define button1 1  
 
 void init_buttons();
 
