@@ -30,58 +30,96 @@
 #include "UART.h"
 
 
+#define SPI_MODE_MSTR   1
+#define SPI_MODE_SLAVE  0
+
+#define MOSI    PB5
+#define MISO    PB6
+#define SCK     PB7
+#define SS      PB4
+
+#define SPI_PRE_4       0
+#define SPI_PRE_16      1
+#define SPI_PRE_64      2
+#define SPI_PRE_128     3
+
+#define SPI_PRESCALAR   SPI_PRE_128
+#define SPI_SPEED_2X    0
 
 
-ISR(USART_RXC_vect){
-    
-    char data = UDR;
-    switch(data){
-        case 'A':
-            led_on(LED1);
-            break;
-        case 'B':
-            led_on(LED2);
-            break;
-        case 'C':
-            led_on(LED3);
-            break;
-        case 'D':
-            led_off_all();
-            break;
-            
-    }
-    LCD4_data(data);
-    
-}
+//ISR(SPI_STC_vect){
+//    LCD4_data(SPDR);
+//}
 
+void init_SPI(char SPI_MODE);
 
-
+char SPI_send(char data);
+char SPI_receive();
 int main() {
 
     
-    init_LCD4();
-    
-    init_buttons();
-    init_LEDS();
-    
-    init_UART(9600);
-    
-
+    setPORTA_DIR(OUT);
+    init_SPI(SPI_MODE_MSTR);
    
-    DDRA = 0xFF;
+    
 
-
-    sei();
+    
+    //sei();
     while (1) {
 
+        setPORTA(SPI_send('A'));
         
-        if(isPressed(button0)){
-             UART_send('A');
-             _delay_ms(200);
-        }
+        _delay_ms(200);
+        
        
 
     }
 
     return (EXIT_SUCCESS);
+}
+
+void init_SPI(char SPI_MODE){
+ 
+    switch(SPI_MODE){
+        case SPI_MODE_MSTR:
+            // Define Pin Control Direction
+            // DDRB |= (1<<MOSI)|(1<<SS)|(1<<SCK);
+            setPINB_DIR(MOSI, OUT);
+            setPINB_DIR(SS, OUT);
+            setPINB_DIR(SCK, OUT);
+            // SPI Control Register
+            SPCR |= SPI_PRESCALAR; // (1<<SPR1)|(1<<SPR0); // Prescalar  >> Fosc/128
+            SPSR |= (SPI_SPEED_2X<<SPI2X); // In case duplication is needed.
+            SPCR |= (1<<MSTR); // Activate Master mode
+            break;
+            
+        case SPI_MODE_SLAVE:
+            // Define Pin Control Direction
+            // DDRB |= (1<<MISO);
+            setPINB_DIR(MISO, OUT);
+            //SPCR |= (1<<SPIE); // Enable SPI INT.
+            SPCR &= ~(1<<MSTR); // Activate SLAVE mode
+            break;
+    }
+    
+    
+    SPCR |= (1<<SPE); // Enable SPI.
+}
+
+char SPI_send(char data){
+    // put data in the data register
+    SPDR = data;
+    // Wait till data fully transmit....
+    while(!(SPSR & (1<<SPIF)));
+    // Transmission is Completed!!
+    
+    // read data received from slave
+    return SPDR;
+}
+
+char SPI_receive(){
+    // Wait till data fully received....
+    while(!(SPSR & (1<<SPIF)));
+    // read data received from Master
+    return SPDR;
 }
