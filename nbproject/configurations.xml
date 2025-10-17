@@ -20,6 +20,7 @@
       <itemPath>TIMER1.h</itemPath>
       <itemPath>UART.h</itemPath>
       <itemPath>std_types.h</itemPath>
+      <itemPath>TWI.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -44,6 +45,7 @@
       <itemPath>TIMER2.c</itemPath>
       <itemPath>TIMER1.c</itemPath>
       <itemPath>UART.c</itemPath>
+      <itemPath>TWI.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

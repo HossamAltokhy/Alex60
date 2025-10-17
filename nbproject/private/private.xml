@@ -4,10 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex60/buttons.c</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex60/TWI.c</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex60/mlcd4.c</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex60/EXT_INT.h</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex60/TWI.h</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex60/lm35.h</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex60/buttons.h</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex60/DIO.c</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex60/mlcd4.h</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex60/EXT_INT.c</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex60/ADC.c</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex60/DIO.h</file>
