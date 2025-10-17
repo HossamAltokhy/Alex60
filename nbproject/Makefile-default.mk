@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c DIO.c leds.c buttons.c keypad.c kit_keypad.c _7seg.c mlcd8.c mlcd4.c ADC.c lm35.c TIMER0.c EXT_INT.c TIMER2.c TIMER1.c UART.c TWI.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c DIO.c leds.c buttons.c keypad.c kit_keypad.c _7seg.c mlcd8.c mlcd4.c ADC.c lm35.c TIMER0.c EXT_INT.c TIMER2.c TIMER1.c UART.c TWI.c SPI.c MEM.c freertos/croutine.c freertos/event_groups.c freertos/heap_4.c freertos/list.c freertos/port.c freertos/queue.c freertos/stream_buffer.c freertos/tasks.c freertos/timers.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/keypad.o ${OBJECTDIR}/kit_keypad.o ${OBJECTDIR}/_7seg.o ${OBJECTDIR}/mlcd8.o ${OBJECTDIR}/mlcd4.o ${OBJECTDIR}/ADC.o ${OBJECTDIR}/lm35.o ${OBJECTDIR}/TIMER0.o ${OBJECTDIR}/EXT_INT.o ${OBJECTDIR}/TIMER2.o ${OBJECTDIR}/TIMER1.o ${OBJECTDIR}/UART.o ${OBJECTDIR}/TWI.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/DIO.o.d ${OBJECTDIR}/leds.o.d ${OBJECTDIR}/buttons.o.d ${OBJECTDIR}/keypad.o.d ${OBJECTDIR}/kit_keypad.o.d ${OBJECTDIR}/_7seg.o.d ${OBJECTDIR}/mlcd8.o.d ${OBJECTDIR}/mlcd4.o.d ${OBJECTDIR}/ADC.o.d ${OBJECTDIR}/lm35.o.d ${OBJECTDIR}/TIMER0.o.d ${OBJECTDIR}/EXT_INT.o.d ${OBJECTDIR}/TIMER2.o.d ${OBJECTDIR}/TIMER1.o.d ${OBJECTDIR}/UART.o.d ${OBJECTDIR}/TWI.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/keypad.o ${OBJECTDIR}/kit_keypad.o ${OBJECTDIR}/_7seg.o ${OBJECTDIR}/mlcd8.o ${OBJECTDIR}/mlcd4.o ${OBJECTDIR}/ADC.o ${OBJECTDIR}/lm35.o ${OBJECTDIR}/TIMER0.o ${OBJECTDIR}/EXT_INT.o ${OBJECTDIR}/TIMER2.o ${OBJECTDIR}/TIMER1.o ${OBJECTDIR}/UART.o ${OBJECTDIR}/TWI.o ${OBJECTDIR}/SPI.o ${OBJECTDIR}/MEM.o ${OBJECTDIR}/freertos/croutine.o ${OBJECTDIR}/freertos/event_groups.o ${OBJECTDIR}/freertos/heap_4.o ${OBJECTDIR}/freertos/list.o ${OBJECTDIR}/freertos/port.o ${OBJECTDIR}/freertos/queue.o ${OBJECTDIR}/freertos/stream_buffer.o ${OBJECTDIR}/freertos/tasks.o ${OBJECTDIR}/freertos/timers.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/DIO.o.d ${OBJECTDIR}/leds.o.d ${OBJECTDIR}/buttons.o.d ${OBJECTDIR}/keypad.o.d ${OBJECTDIR}/kit_keypad.o.d ${OBJECTDIR}/_7seg.o.d ${OBJECTDIR}/mlcd8.o.d ${OBJECTDIR}/mlcd4.o.d ${OBJECTDIR}/ADC.o.d ${OBJECTDIR}/lm35.o.d ${OBJECTDIR}/TIMER0.o.d ${OBJECTDIR}/EXT_INT.o.d ${OBJECTDIR}/TIMER2.o.d ${OBJECTDIR}/TIMER1.o.d ${OBJECTDIR}/UART.o.d ${OBJECTDIR}/TWI.o.d ${OBJECTDIR}/SPI.o.d ${OBJECTDIR}/MEM.o.d ${OBJECTDIR}/freertos/croutine.o.d ${OBJECTDIR}/freertos/event_groups.o.d ${OBJECTDIR}/freertos/heap_4.o.d ${OBJECTDIR}/freertos/list.o.d ${OBJECTDIR}/freertos/port.o.d ${OBJECTDIR}/freertos/queue.o.d ${OBJECTDIR}/freertos/stream_buffer.o.d ${OBJECTDIR}/freertos/tasks.o.d ${OBJECTDIR}/freertos/timers.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/keypad.o ${OBJECTDIR}/kit_keypad.o ${OBJECTDIR}/_7seg.o ${OBJECTDIR}/mlcd8.o ${OBJECTDIR}/mlcd4.o ${OBJECTDIR}/ADC.o ${OBJECTDIR}/lm35.o ${OBJECTDIR}/TIMER0.o ${OBJECTDIR}/EXT_INT.o ${OBJECTDIR}/TIMER2.o ${OBJECTDIR}/TIMER1.o ${OBJECTDIR}/UART.o ${OBJECTDIR}/TWI.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/DIO.o ${OBJECTDIR}/leds.o ${OBJECTDIR}/buttons.o ${OBJECTDIR}/keypad.o ${OBJECTDIR}/kit_keypad.o ${OBJECTDIR}/_7seg.o ${OBJECTDIR}/mlcd8.o ${OBJECTDIR}/mlcd4.o ${OBJECTDIR}/ADC.o ${OBJECTDIR}/lm35.o ${OBJECTDIR}/TIMER0.o ${OBJECTDIR}/EXT_INT.o ${OBJECTDIR}/TIMER2.o ${OBJECTDIR}/TIMER1.o ${OBJECTDIR}/UART.o ${OBJECTDIR}/TWI.o ${OBJECTDIR}/SPI.o ${OBJECTDIR}/MEM.o ${OBJECTDIR}/freertos/croutine.o ${OBJECTDIR}/freertos/event_groups.o ${OBJECTDIR}/freertos/heap_4.o ${OBJECTDIR}/freertos/list.o ${OBJECTDIR}/freertos/port.o ${OBJECTDIR}/freertos/queue.o ${OBJECTDIR}/freertos/stream_buffer.o ${OBJECTDIR}/freertos/tasks.o ${OBJECTDIR}/freertos/timers.o
 
 # Source Files
-SOURCEFILES=main.c DIO.c leds.c buttons.c keypad.c kit_keypad.c _7seg.c mlcd8.c mlcd4.c ADC.c lm35.c TIMER0.c EXT_INT.c TIMER2.c TIMER1.c UART.c TWI.c
+SOURCEFILES=main.c DIO.c leds.c buttons.c keypad.c kit_keypad.c _7seg.c mlcd8.c mlcd4.c ADC.c lm35.c TIMER0.c EXT_INT.c TIMER2.c TIMER1.c UART.c TWI.c SPI.c MEM.c freertos/croutine.c freertos/event_groups.c freertos/heap_4.c freertos/list.c freertos/port.c freertos/queue.c freertos/stream_buffer.c freertos/tasks.c freertos/timers.c
 
 
 
@@ -196,6 +196,72 @@ ${OBJECTDIR}/TWI.o: TWI.c  .generated_files/flags/default/106ff0d336e7ad59f9671c
 	@${RM} ${OBJECTDIR}/TWI.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/TWI.o.d" -MT "${OBJECTDIR}/TWI.o.d" -MT ${OBJECTDIR}/TWI.o -o ${OBJECTDIR}/TWI.o TWI.c 
 	
+${OBJECTDIR}/SPI.o: SPI.c  .generated_files/flags/default/aebcb3cfa6d05bd63994a5f1665acfa9b8bce70d .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SPI.o.d 
+	@${RM} ${OBJECTDIR}/SPI.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/SPI.o.d" -MT "${OBJECTDIR}/SPI.o.d" -MT ${OBJECTDIR}/SPI.o -o ${OBJECTDIR}/SPI.o SPI.c 
+	
+${OBJECTDIR}/MEM.o: MEM.c  .generated_files/flags/default/8958bd109141eab2a71e13677bf24c1e6bfdfb7f .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/MEM.o.d 
+	@${RM} ${OBJECTDIR}/MEM.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/MEM.o.d" -MT "${OBJECTDIR}/MEM.o.d" -MT ${OBJECTDIR}/MEM.o -o ${OBJECTDIR}/MEM.o MEM.c 
+	
+${OBJECTDIR}/freertos/croutine.o: freertos/croutine.c  .generated_files/flags/default/3fe71558d9da576649ed3f4ce6c95fdb2610d106 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/croutine.o.d 
+	@${RM} ${OBJECTDIR}/freertos/croutine.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/croutine.o.d" -MT "${OBJECTDIR}/freertos/croutine.o.d" -MT ${OBJECTDIR}/freertos/croutine.o -o ${OBJECTDIR}/freertos/croutine.o freertos/croutine.c 
+	
+${OBJECTDIR}/freertos/event_groups.o: freertos/event_groups.c  .generated_files/flags/default/b9fae8c0eb976971c8eab7ba8a5a2d5dafaaf4b4 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/event_groups.o.d 
+	@${RM} ${OBJECTDIR}/freertos/event_groups.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/event_groups.o.d" -MT "${OBJECTDIR}/freertos/event_groups.o.d" -MT ${OBJECTDIR}/freertos/event_groups.o -o ${OBJECTDIR}/freertos/event_groups.o freertos/event_groups.c 
+	
+${OBJECTDIR}/freertos/heap_4.o: freertos/heap_4.c  .generated_files/flags/default/4bcd5fb202aa6d881923b1e8ef27ad7f4732119e .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/heap_4.o.d 
+	@${RM} ${OBJECTDIR}/freertos/heap_4.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/heap_4.o.d" -MT "${OBJECTDIR}/freertos/heap_4.o.d" -MT ${OBJECTDIR}/freertos/heap_4.o -o ${OBJECTDIR}/freertos/heap_4.o freertos/heap_4.c 
+	
+${OBJECTDIR}/freertos/list.o: freertos/list.c  .generated_files/flags/default/91730425b5260f1b81ed6310f2c516b42da739bb .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/list.o.d 
+	@${RM} ${OBJECTDIR}/freertos/list.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/list.o.d" -MT "${OBJECTDIR}/freertos/list.o.d" -MT ${OBJECTDIR}/freertos/list.o -o ${OBJECTDIR}/freertos/list.o freertos/list.c 
+	
+${OBJECTDIR}/freertos/port.o: freertos/port.c  .generated_files/flags/default/fbe6c845b9bc8d83b467542836434b5e95ffa5ff .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/port.o.d 
+	@${RM} ${OBJECTDIR}/freertos/port.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/port.o.d" -MT "${OBJECTDIR}/freertos/port.o.d" -MT ${OBJECTDIR}/freertos/port.o -o ${OBJECTDIR}/freertos/port.o freertos/port.c 
+	
+${OBJECTDIR}/freertos/queue.o: freertos/queue.c  .generated_files/flags/default/271b3e1fa6b75b2596da0544739008a44f259ca .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/queue.o.d 
+	@${RM} ${OBJECTDIR}/freertos/queue.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/queue.o.d" -MT "${OBJECTDIR}/freertos/queue.o.d" -MT ${OBJECTDIR}/freertos/queue.o -o ${OBJECTDIR}/freertos/queue.o freertos/queue.c 
+	
+${OBJECTDIR}/freertos/stream_buffer.o: freertos/stream_buffer.c  .generated_files/flags/default/d3307018171b22edf9ced8a426c0d7f360e0797d .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/stream_buffer.o.d 
+	@${RM} ${OBJECTDIR}/freertos/stream_buffer.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/stream_buffer.o.d" -MT "${OBJECTDIR}/freertos/stream_buffer.o.d" -MT ${OBJECTDIR}/freertos/stream_buffer.o -o ${OBJECTDIR}/freertos/stream_buffer.o freertos/stream_buffer.c 
+	
+${OBJECTDIR}/freertos/tasks.o: freertos/tasks.c  .generated_files/flags/default/b6239fa9a2befe88502484a687a22b6da6cad832 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/tasks.o.d 
+	@${RM} ${OBJECTDIR}/freertos/tasks.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/tasks.o.d" -MT "${OBJECTDIR}/freertos/tasks.o.d" -MT ${OBJECTDIR}/freertos/tasks.o -o ${OBJECTDIR}/freertos/tasks.o freertos/tasks.c 
+	
+${OBJECTDIR}/freertos/timers.o: freertos/timers.c  .generated_files/flags/default/5f871de38e0fa6e9155141ff228fa46305c21cd4 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/timers.o.d 
+	@${RM} ${OBJECTDIR}/freertos/timers.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/timers.o.d" -MT "${OBJECTDIR}/freertos/timers.o.d" -MT ${OBJECTDIR}/freertos/timers.o -o ${OBJECTDIR}/freertos/timers.o freertos/timers.c 
+	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/24312582250579ef564cf5178ed9ef8f2a9afa89 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
 	@${MKDIR} "${OBJECTDIR}" 
@@ -298,6 +364,72 @@ ${OBJECTDIR}/TWI.o: TWI.c  .generated_files/flags/default/7fa720b4f572ce674aaf50
 	@${RM} ${OBJECTDIR}/TWI.o.d 
 	@${RM} ${OBJECTDIR}/TWI.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/TWI.o.d" -MT "${OBJECTDIR}/TWI.o.d" -MT ${OBJECTDIR}/TWI.o -o ${OBJECTDIR}/TWI.o TWI.c 
+	
+${OBJECTDIR}/SPI.o: SPI.c  .generated_files/flags/default/96ebcf7d9bb8e87a8ce50e7ac94264f6c3fb8ec5 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SPI.o.d 
+	@${RM} ${OBJECTDIR}/SPI.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/SPI.o.d" -MT "${OBJECTDIR}/SPI.o.d" -MT ${OBJECTDIR}/SPI.o -o ${OBJECTDIR}/SPI.o SPI.c 
+	
+${OBJECTDIR}/MEM.o: MEM.c  .generated_files/flags/default/7a5d2bbbedab7cb4ca6e8e883174195ef452c451 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/MEM.o.d 
+	@${RM} ${OBJECTDIR}/MEM.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/MEM.o.d" -MT "${OBJECTDIR}/MEM.o.d" -MT ${OBJECTDIR}/MEM.o -o ${OBJECTDIR}/MEM.o MEM.c 
+	
+${OBJECTDIR}/freertos/croutine.o: freertos/croutine.c  .generated_files/flags/default/666fd289c6cbce4137d7f44bcb7889fce04ae8d5 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/croutine.o.d 
+	@${RM} ${OBJECTDIR}/freertos/croutine.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/croutine.o.d" -MT "${OBJECTDIR}/freertos/croutine.o.d" -MT ${OBJECTDIR}/freertos/croutine.o -o ${OBJECTDIR}/freertos/croutine.o freertos/croutine.c 
+	
+${OBJECTDIR}/freertos/event_groups.o: freertos/event_groups.c  .generated_files/flags/default/677ce5573ac3b2574a52036844bcf988de424feb .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/event_groups.o.d 
+	@${RM} ${OBJECTDIR}/freertos/event_groups.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/event_groups.o.d" -MT "${OBJECTDIR}/freertos/event_groups.o.d" -MT ${OBJECTDIR}/freertos/event_groups.o -o ${OBJECTDIR}/freertos/event_groups.o freertos/event_groups.c 
+	
+${OBJECTDIR}/freertos/heap_4.o: freertos/heap_4.c  .generated_files/flags/default/4e45bf7532ecafaeb7b0e7052c3028d8d35461da .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/heap_4.o.d 
+	@${RM} ${OBJECTDIR}/freertos/heap_4.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/heap_4.o.d" -MT "${OBJECTDIR}/freertos/heap_4.o.d" -MT ${OBJECTDIR}/freertos/heap_4.o -o ${OBJECTDIR}/freertos/heap_4.o freertos/heap_4.c 
+	
+${OBJECTDIR}/freertos/list.o: freertos/list.c  .generated_files/flags/default/a9940316a9dadeebc31670b57121c24d4c0c3d5 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/list.o.d 
+	@${RM} ${OBJECTDIR}/freertos/list.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/list.o.d" -MT "${OBJECTDIR}/freertos/list.o.d" -MT ${OBJECTDIR}/freertos/list.o -o ${OBJECTDIR}/freertos/list.o freertos/list.c 
+	
+${OBJECTDIR}/freertos/port.o: freertos/port.c  .generated_files/flags/default/e26e0dab11bc3ab4fb66da6153c9b9dd6e0cf1e8 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/port.o.d 
+	@${RM} ${OBJECTDIR}/freertos/port.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/port.o.d" -MT "${OBJECTDIR}/freertos/port.o.d" -MT ${OBJECTDIR}/freertos/port.o -o ${OBJECTDIR}/freertos/port.o freertos/port.c 
+	
+${OBJECTDIR}/freertos/queue.o: freertos/queue.c  .generated_files/flags/default/7e5572c1fc96cf4397742530bf251d7995c500b6 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/queue.o.d 
+	@${RM} ${OBJECTDIR}/freertos/queue.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/queue.o.d" -MT "${OBJECTDIR}/freertos/queue.o.d" -MT ${OBJECTDIR}/freertos/queue.o -o ${OBJECTDIR}/freertos/queue.o freertos/queue.c 
+	
+${OBJECTDIR}/freertos/stream_buffer.o: freertos/stream_buffer.c  .generated_files/flags/default/327ac80946ce8e5ad907ed2b9390dd76159c636 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/stream_buffer.o.d 
+	@${RM} ${OBJECTDIR}/freertos/stream_buffer.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/stream_buffer.o.d" -MT "${OBJECTDIR}/freertos/stream_buffer.o.d" -MT ${OBJECTDIR}/freertos/stream_buffer.o -o ${OBJECTDIR}/freertos/stream_buffer.o freertos/stream_buffer.c 
+	
+${OBJECTDIR}/freertos/tasks.o: freertos/tasks.c  .generated_files/flags/default/601a4645113589d51f10b487a213b12f6b090b1 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/tasks.o.d 
+	@${RM} ${OBJECTDIR}/freertos/tasks.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/tasks.o.d" -MT "${OBJECTDIR}/freertos/tasks.o.d" -MT ${OBJECTDIR}/freertos/tasks.o -o ${OBJECTDIR}/freertos/tasks.o freertos/tasks.c 
+	
+${OBJECTDIR}/freertos/timers.o: freertos/timers.c  .generated_files/flags/default/e00cf87bb45d5e0186a44f3da5889ba5df1316a .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}/freertos" 
+	@${RM} ${OBJECTDIR}/freertos/timers.o.d 
+	@${RM} ${OBJECTDIR}/freertos/timers.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/freertos/timers.o.d" -MT "${OBJECTDIR}/freertos/timers.o.d" -MT ${OBJECTDIR}/freertos/timers.o -o ${OBJECTDIR}/freertos/timers.o freertos/timers.c 
 	
 endif
 

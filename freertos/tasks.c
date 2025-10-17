@@ -36,10 +36,10 @@
 #define MPU_WRAPPERS_INCLUDED_FROM_API_FILE
 
 /* FreeRTOS includes. */
-#include "FreeRTOS.h"
-#include "task.h"
-#include "timers.h"
-#include "stack_macros.h"
+#include "include/FreeRTOS.h"
+#include "include/task.h"
+#include "include/timers.h"
+#include "include/stack_macros.h"
 
 /* The default definitions are only available for non-MPU ports. The
  * reason is that the stack alignment requirements vary for different

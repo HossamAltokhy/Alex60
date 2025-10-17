@@ -21,7 +21,13 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  leds.h buttons.h keypad.h kit_keypad.h _7seg.h mlcd4.h ADC.h lm35.h \
  TIMER2.h TIMER1.h TIMER0.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\string.h UART.h \
- TWI.h c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\eeprom.h
+ TWI.h c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\eeprom.h \
+ SPI.h MEM.h freertos/include/FreeRTOSConfig.h \
+ freertos/include/FreeRTOS.h freertos/include/FreeRTOSConfig.h \
+ freertos/include/projdefs.h freertos/include/portable.h \
+ freertos/include/deprecated_definitions.h freertos/include/portmacro.h \
+ freertos/include/mpu_wrappers.h freertos/include/task.h \
+ freertos/include/list.h
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdio.h:
 
@@ -92,3 +98,27 @@ UART.h:
 TWI.h:
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\eeprom.h:
+
+SPI.h:
+
+MEM.h:
+
+freertos/include/FreeRTOSConfig.h:
+
+freertos/include/FreeRTOS.h:
+
+freertos/include/FreeRTOSConfig.h:
+
+freertos/include/projdefs.h:
+
+freertos/include/portable.h:
+
+freertos/include/deprecated_definitions.h:
+
+freertos/include/portmacro.h:
+
+freertos/include/mpu_wrappers.h:
+
+freertos/include/task.h:
+
+freertos/include/list.h:
