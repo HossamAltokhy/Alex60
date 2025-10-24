@@ -39,14 +39,14 @@
 #include "freertos/include/FreeRTOS.h"
 #include "freertos/include/task.h"
 #include "freertos/include/queue.h"
+#include "freertos/include/semphr.h"
 
 
 
 TaskHandle_t handler1 = NULL;
 TaskHandle_t handler2 = NULL;
 
-xQueueHandle xQueue1 = NULL; // T1 >> T2
-xQueueHandle xQueue2 = NULL; // T1 << T2
+SemaphoreHandle_t SemaphoreHandler = NULL;
 
 void Task1(void * ptr) {
 
@@ -54,20 +54,30 @@ void Task1(void * ptr) {
 
     // Processing once
 
-    int x = 100;
-    int result = 0;
+    char x = 'a';
+
+    
+    
     //End
     while (1) {
 
-        if (xQueueSendToBack(xQueue1, &x, 0) == pdPASS) {
-            x++;
-        }
-        if (xQueueReceive(xQueue2, &result, 1) == pdPASS) {
-            UART_num(result);
-            UART_send('\r');
+        vTaskDelay(1);
+        if (SemaphoreHandler != NULL) {
+            
+            if (xSemaphoreTake(SemaphoreHandler, ( TickType_t ) 10) == pdTRUE) {
+                UART_send(x);
+                x++;
+                xSemaphoreGive(SemaphoreHandler);
+            }
+            else{
+                UART_send('*');
+            }
 
         }
-        taskYIELD();
+
+        else{
+            UART_send('_');
+        }
 
     }
 
@@ -82,24 +92,28 @@ void Task2(void * ptr) {
 
 
 
-    int x = 200;
+    int x = 1;
     int result = 0;
     //End
     vTaskDelay(2);
     while (1) {
+        vTaskDelay(1);
+        if (SemaphoreHandler != NULL) {
 
-        if (xQueueSendToBack(xQueue2, &x, 0) == pdPASS) {
-            x++;
+            if (xSemaphoreTake(SemaphoreHandler,( TickType_t ) 10) == pdTRUE) {
+                UART_num(x);
+                x++;
+                xSemaphoreGive(SemaphoreHandler);
+            }
+            else{
+                UART_send('?');
+            }
+
+        }
+        else{
+            UART_send('!');
         }
 
-
-        if (xQueueReceive(xQueue1, &result, 1) == pdPASS) {
-            UART_num(result);
-            UART_send('\r');
-
-        }
-
-        taskYIELD();
     }
 
     // Delete its own memory space
@@ -120,21 +134,19 @@ int main() {
 
 
     init_UART(9600);
-    xQueue1 = xQueueCreate(2, sizeof (int));
-    xQueue2 = xQueueCreate(2, sizeof (int));
 
+    SemaphoreHandler = xSemaphoreCreateBinary();
+    xSemaphoreGive(SemaphoreHandler);
+    
 
-    if (xQueue1 && xQueue2) {
-
-
-        xTaskCreate(Task1, "T1", 100, NULL, 3, &handler1);
-        xTaskCreate(Task2, "T2", 100, NULL, 3, &handler2);
+    xTaskCreate(Task1, "T1", 100, NULL, 3, &handler1);
+    xTaskCreate(Task2, "T2", 100, NULL, 3, &handler2);
 
 
 
-        // Start FreeRTOS To RUN....
-        vTaskStartScheduler();
-    }
+    // Start FreeRTOS To RUN....
+    vTaskStartScheduler();
+
 
 
 

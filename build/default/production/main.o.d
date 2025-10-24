@@ -27,7 +27,8 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  freertos/include/projdefs.h freertos/include/portable.h \
  freertos/include/deprecated_definitions.h freertos/include/portmacro.h \
  freertos/include/mpu_wrappers.h freertos/include/task.h \
- freertos/include/list.h freertos/include/queue.h freertos/include/task.h
+ freertos/include/list.h freertos/include/queue.h freertos/include/task.h \
+ freertos/include/semphr.h freertos/include/queue.h
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdio.h:
 
@@ -126,3 +127,7 @@ freertos/include/list.h:
 freertos/include/queue.h:
 
 freertos/include/task.h:
+
+freertos/include/semphr.h:
+
+freertos/include/queue.h:

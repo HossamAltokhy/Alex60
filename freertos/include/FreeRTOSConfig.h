@@ -55,6 +55,8 @@
 #define configIDLE_SHOULD_YIELD		1
 #define configQUEUE_REGISTRY_SIZE	0
 
+#define configSUPPORT_DYNAMIC_ALLOCATION 1
+
 /* Set the following definitions to 1 to include the API function, or zero
 to exclude the API function. */
 
