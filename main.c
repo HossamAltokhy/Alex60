@@ -135,8 +135,8 @@ int main() {
 
     init_UART(9600);
 
-    SemaphoreHandler = xSemaphoreCreateBinary();
-    xSemaphoreGive(SemaphoreHandler);
+    SemaphoreHandler = xSemaphoreCreateMutex();
+    //xSemaphoreGive(SemaphoreHandler); //  For Binary Semaphore Only  >> you need to give at least once before using the semaphore properly.
     
 
     xTaskCreate(Task1, "T1", 100, NULL, 3, &handler1);
