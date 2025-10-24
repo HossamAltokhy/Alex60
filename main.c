@@ -7,7 +7,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
 #include <avr/io.h>
+
 #include <avr/interrupt.h>
 
 
@@ -36,56 +38,112 @@
 #include "freertos/include/FreeRTOSConfig.h"
 #include "freertos/include/FreeRTOS.h"
 #include "freertos/include/task.h"
+#include "freertos/include/queue.h"
 
 
 
-TaskHandle_t handler1 =  NULL;
-TaskHandle_t handler2 =  NULL;
+TaskHandle_t handler1 = NULL;
+TaskHandle_t handler2 = NULL;
 
+xQueueHandle xQueue1 = NULL; // T1 >> T2
+xQueueHandle xQueue2 = NULL; // T1 << T2
 
-void Task1(void * ptr) { 
-    
-    
+void Task1(void * ptr) {
+
+    // initializations
+
+    // Processing once
+
+    int x = 100;
+    int result = 0;
+    //End
     while (1) {
-        UART_send('A');
-        vTaskDelay(5);
-    }
-    
-}
-void Task2(void * ptr) {  
-    
-    int counter =0;
-    
-    while (1) {
-        counter ++;
-        LCD4_data('A');
-        if(counter == 5){
-            vTaskDelete(NULL);
+
+        if (xQueueSendToBack(xQueue1, &x, 0) == pdPASS) {
+            x++;
         }
-       
-        
+        if (xQueueReceive(xQueue2, &result, 1) == pdPASS) {
+            UART_num(result);
+            UART_send('\r');
+
+        }
+        taskYIELD();
+
     }
-    
+
+
+    // Delete its own memory space
+    vTaskDelete(NULL);
+
 }
 
+void Task2(void * ptr) {
+
+
+
+
+    int x = 200;
+    int result = 0;
+    //End
+    vTaskDelay(2);
+    while (1) {
+
+        if (xQueueSendToBack(xQueue2, &x, 0) == pdPASS) {
+            x++;
+        }
+
+
+        if (xQueueReceive(xQueue1, &result, 1) == pdPASS) {
+            UART_num(result);
+            UART_send('\r');
+
+        }
+
+        taskYIELD();
+    }
+
+    // Delete its own memory space
+    vTaskDelete(NULL);
+
+}
+
+// Status 
+
+// Deleted - Blocked
+// Running >>  CPU execute instructions 
+// Ready >>> About to be the running task.
+
+//  Resume      Suspend
+//  Running  vs Suspended(Ready - Deleted - Blocked)
 
 int main() {
 
+
     init_UART(9600);
-    init_LCD4();
-    
-    _delay_ms(50);
-    
-    
-    
-    xTaskCreate(Task1, "T1", 100, NULL, 1, &handler1);
-    xTaskCreate(Task2, "T2", 100, NULL, 1, &handler2);
-    
-    
-   
-    // Start FreeRTOS To RUN....
-    vTaskStartScheduler();
-    
-    
+    xQueue1 = xQueueCreate(2, sizeof (int));
+    xQueue2 = xQueueCreate(2, sizeof (int));
+
+
+    if (xQueue1 && xQueue2) {
+
+
+        xTaskCreate(Task1, "T1", 100, NULL, 3, &handler1);
+        xTaskCreate(Task2, "T2", 100, NULL, 3, &handler2);
+
+
+
+        // Start FreeRTOS To RUN....
+        vTaskStartScheduler();
+    }
+
+
+
+    while (1) {
+        // No use...
+
+        UART_send('!');
+    }
+
+
     return 0;
 }

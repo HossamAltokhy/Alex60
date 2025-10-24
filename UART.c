@@ -1,4 +1,5 @@
 #include <avr/io.h>
+#include <stdlib.h>
 #include "UART.h"
 #define F_CPU 16000000UL
 #include <util/delay.h>
@@ -29,6 +30,22 @@ void UART_send(char data){
     // Pooling 
     while(!(UCSRA & (1<<UDRE)));
     UDR = data; 
+    
+}
+
+void UART_str(char * str){
+    
+    for(int i = 0; str[i]!= '\0'; i++){
+        UART_send(str[i]);
+    } 
+}
+
+void UART_num(long int num){
+    
+    char str[11];
+    ltoa(num, str, 10);
+    
+    UART_str(str);
     
 }
 

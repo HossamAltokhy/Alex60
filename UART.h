@@ -17,7 +17,8 @@
 void init_UART(int Baudrate);
 char UART_receive();
 void UART_send(char data);
-
+void UART_str(char * str);
+void UART_num(long int num);
 
 #endif	/* UART_H */
 
